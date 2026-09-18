@@ -1,0 +1,53 @@
+name: Cập nhật log DNS (near real-time)
+
+# Chạy riêng, tách khỏi sync.yml, để dashboard được làm mới thường xuyên mà
+# KHÔNG phải chạy lại toàn bộ sync danh sách/luật (vốn vẫn ở 1 lần/ngày
+# trong sync.yml) — tiết kiệm API call, chỉ gọi đúng phần analytics.
+#
+# GitHub Actions cron không đảm bảo chạy đúng phút, có thể trễ vài phút khi
+# runner bận — đây là giới hạn của GitHub, không phải của script.
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dns-logs
+  cancel-in-progress: true
+
+jobs:
+  dns-logs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lấy log DNS từ Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: npm run dns-logs
+
+      - name: Commit dns-logs.json
+        if: always()
+        run: |
+          git config user.name "dns-sync-bot"
+          git config user.email "actions@github.com"
+          git add report.json
+          [ -f dns-logs.json ] && git add dns-logs.json
+          git diff --staged --quiet || git commit -m "chore: cập nhật dns-logs.json [skip ci]"
+          git push

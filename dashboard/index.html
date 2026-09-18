@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DNS Sync — Trạm điều khiển</title>
+<style>
+  :root {
+    --bg: #0a0d0f;
+    --bg-raised: #12171a;
+    --line: #1e2629;
+    --ink: #d7e1e3;
+    --ink-dim: #6f8286;
+    --signal: #4fd6c4;
+    --signal-dim: #2a5b54;
+    --warn: #e8a33d;
+    --err: #e8593d;
+    --mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+    --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    min-height: 100vh;
+    padding: clamp(20px, 4vw, 56px);
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(79,214,196,0.06), transparent 45%),
+      radial-gradient(circle at 100% 100%, rgba(79,214,196,0.04), transparent 40%);
+  }
+
+  .wrap { max-width: 1040px; margin: 0 auto; }
+
+  /* ── Header ────────────────────────────────────────────────────── */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .eyebrow svg { width: 13px; height: 13px; flex: none; }
+  h1 {
+    margin: 0;
+    font-size: clamp(24px, 3.4vw, 34px);
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    color: #f2f6f6;
+  }
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--bg-raised);
+    white-space: nowrap;
+  }
+  .status-pill svg { width: 14px; height: 14px; flex: none; color: var(--ink-dim); }
+  .status-pill svg.ok { color: var(--signal); filter: drop-shadow(0 0 4px rgba(79,214,196,0.5)); }
+  .status-pill svg.err { color: var(--err); filter: drop-shadow(0 0 4px rgba(232,89,61,0.5)); }
+  .status-pill svg.pulse { animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  /* ── Stat grid ─────────────────────────────────────────────────── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+  .stat {
+    background: var(--bg);
+    padding: 20px 18px;
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin: 0 0 10px;
+  }
+  .stat-value {
+    font-family: var(--mono);
+    font-size: 28px;
+    font-weight: 500;
+    color: #f2f6f6;
+    line-height: 1;
+  }
+  .stat-value.signal { color: var(--signal); }
+  .stat-value.warn { color: var(--warn); }
+  .stat-sub {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+    margin-top: 6px;
+  }
+
+  /* ── Charts ────────────────────────────────────────────────────── */
+  .charts {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+  .chart-card {
+    background: var(--bg);
+    padding: 20px 20px 16px;
+  }
+  .chart-card .section-title { margin-bottom: 14px; }
+  .chart-box { position: relative; height: 220px; }
+  .chart-empty {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-dim);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 720px) {
+    .charts { grid-template-columns: 1fr; }
+  }
+
+  /* ── DNS query logs ────────────────────────────────────────────── */
+  .dns-section { margin-bottom: 40px; }
+  .dns-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .dns-section-header .section-title { margin: 0; padding: 0; border: none; }
+  .dns-window {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+  }
+
+  .dns-totals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 20px;
+  }
+  .dns-total { background: var(--bg); padding: 16px 18px; }
+  .dns-total .stat-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-dim); margin: 0 0 8px; }
+  .dns-total .stat-value { font-family: var(--mono); font-size: 22px; font-weight: 500; line-height: 1; color: #f2f6f6; }
+  .dns-total .stat-value.block { color: var(--err); }
+  .dns-total .stat-value.allow { color: var(--signal); }
+
+  .dns-hourly-box { position: relative; height: 160px; margin-bottom: 24px; }
+
+  .dns-top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 24px;
+  }
+  .dns-top-card { background: var(--bg); padding: 18px 18px 8px; }
+  .dns-top-card .dns-top-title {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dns-top-title.block { color: var(--err); }
+  .dns-top-title.allow { color: var(--signal); }
+  .section-sub {
+    font-size: 11px;
+    color: var(--ink-dim);
+    margin: -6px 0 12px;
+    line-height: 1.4;
+  }
+  .dns-top-list { list-style: none; margin: 0; padding: 0; }
+  .dns-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .dns-top-row:last-child { border-bottom: none; }
+  .dns-top-domain { color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dns-top-count { color: var(--ink-dim); flex: none; }
+  @media (max-width: 640px) { .dns-top-grid { grid-template-columns: 1fr; } }
+
+  .dns-filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .dns-filter-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    background: var(--bg-raised);
+    color: var(--ink-dim);
+    cursor: pointer;
+  }
+  .dns-filter-btn.active { color: #f2f6f6; border-color: var(--signal-dim); background: rgba(79,214,196,0.08); }
+  .dns-filter-btn:hover { color: var(--ink); }
+
+  .dns-log-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 12px; }
+  .dns-log-table th {
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 500;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .dns-log-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .dns-log-table tr:last-child td { border-bottom: none; }
+  .dns-log-table .domain-cell { max-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .decision-badge {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+  .decision-badge.block { color: var(--err); border-color: rgba(232,89,61,0.35); background: rgba(232,89,61,0.06); }
+  .decision-badge.allow { color: var(--signal); border-color: var(--signal-dim); background: rgba(79,214,196,0.06); }
+  .decision-badge.other { color: var(--warn); border-color: rgba(232,163,61,0.35); background: rgba(232,163,61,0.06); }
+  .dns-log-table-wrap { overflow-x: auto; border: 1px solid var(--line); }
+
+  /* ── Timeline ──────────────────────────────────────────────────── */
+  .section-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .runs { display: flex; flex-direction: column; }
+  .run {
+    display: grid;
+    grid-template-columns: 22px 108px 1fr auto;
+    gap: 16px;
+    align-items: start;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .run:last-child { border-bottom: none; }
+  .run-rail {
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+  }
+  .run-rail::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--line);
+  }
+  .run:first-child .run-rail::before { top: 18px; }
+  .run:last-child .run-rail::before { bottom: calc(100% - 18px); }
+  .run-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-raised);
+    border: 1px solid var(--signal-dim);
+    color: var(--signal);
+    z-index: 1;
+    box-shadow: 0 0 0 3px var(--bg);
+    flex: none;
+  }
+  .run-icon svg { width: 12px; height: 12px; }
+  .run-icon.err { border-color: rgba(232,89,61,0.4); color: var(--err); }
+
+  .run-time {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-dim);
+    padding-top: 3px;
+    white-space: nowrap;
+  }
+  .run-body { min-width: 0; }
+  .run-command {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .run-command .cmd-name { color: #f2f6f6; font-weight: 600; }
+  .run-detail {
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+  }
+  .run-detail .err-msg { color: var(--err); font-family: var(--mono); font-size: 11.5px; }
+  .run-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--signal-dim);
+    color: var(--signal);
+    background: rgba(79,214,196,0.06);
+    white-space: nowrap;
+    height: fit-content;
+  }
+  .run-badge.err { border-color: rgba(232,89,61,0.4); color: var(--err); background: rgba(232,89,61,0.06); }
+
+  /* ── Empty / loading states ────────────────────────────────────── */
+  .empty {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-dim);
+    padding: 40px 4px;
+    text-align: center;
+    border: 1px dashed var(--line);
+  }
+
+  footer {
+    margin-top: 40px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-dim);
+  }
+  footer code { color: var(--ink); }
+
+  @media (max-width: 520px) {
+    .run { grid-template-columns: 22px 1fr; }
+    .run-time { grid-column: 2; order: -1; padding-top: 0; margin-bottom: 2px; }
+    .run-badge { grid-column: 2; margin-top: 8px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <p class="eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11V5l8-3z"/></svg>
+          dns filtering — trạm điều khiển
+        </p>
+        <h1>Trạng thái đồng bộ</h1>
+      </div>
+      <div class="status-pill" id="statusPill">
+        <svg id="statusIcon" class="pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg>
+        <span id="statusText">Đang tải…</span>
+      </div>
+    </header>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="charts" id="charts">
+      <div class="chart-card">
+        <p class="section-title">Số domain đang chặn theo thời gian</p>
+        <div class="chart-box"><canvas id="chartDomains"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <p class="section-title">Thêm / bớt mỗi lần đồng bộ</p>
+        <div class="chart-box"><canvas id="chartDelta"></canvas></div>
+      </div>
+    </div>
+
+    <section class="dns-section" id="dnsSection" style="display:none">
+      <div class="dns-section-header">
+        <p class="section-title">Log truy vấn DNS</p>
+        <span class="dns-window" id="dnsWindow"></span>
+      </div>
+
+      <div class="dns-totals" id="dnsTotals"></div>
+
+      <div class="dns-hourly-box"><canvas id="chartDnsHourly"></canvas></div>
+
+      <div class="dns-top-grid">
+        <div class="dns-top-card">
+          <p class="dns-top-title block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            Top domain bị chặn
+          </p>
+          <ul class="dns-top-list" id="dnsTopBlocked"></ul>
+        </div>
+        <div class="dns-top-card">
+          <p class="dns-top-title allow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M20 6L9 17l-5-5"/></svg>
+            Top domain cho phép
+          </p>
+          <ul class="dns-top-list" id="dnsTopAllowed"></ul>
+        </div>
+      </div>
+
+      <div class="dns-top-grid" id="dnsRootSection" style="display:none">
+        <div class="dns-top-card">
+          <p class="dns-top-title">Tên miền gốc</p>
+          <p class="section-sub">Tổng hợp tất cả truy vấn được thực hiện cho các tên miền gốc và tất cả các tên miền phụ.</p>
+          <ul class="dns-top-list" id="dnsRootDomains"></ul>
+        </div>
+        <div class="dns-top-card">
+          <p class="dns-top-title">Sự thống trị của GAFAM</p>
+          <p class="section-sub">Tỷ lệ truy vấn DNS thuộc về Google, Amazon, Facebook (nay là Meta), Apple và Microsoft.</p>
+          <ul class="dns-top-list" id="dnsGafam"></ul>
+        </div>
+      </div>
+
+      <div class="dns-filters" id="dnsFilters">
+        <button class="dns-filter-btn active" data-filter="all">Tất cả</button>
+        <button class="dns-filter-btn" data-filter="block">Chỉ bị chặn</button>
+        <button class="dns-filter-btn" data-filter="allow">Chỉ cho phép</button>
+      </div>
+
+      <div class="dns-log-table-wrap">
+        <table class="dns-log-table">
+          <thead>
+            <tr><th>Domain</th><th>Trạng thái</th><th>Giờ</th><th>Lượt</th></tr>
+          </thead>
+          <tbody id="dnsLogRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="section-title">Lịch sử chạy gần đây</p>
+    <div class="runs" id="runs">
+      <div class="empty">Đang tải report.json…</div>
+    </div>
+
+
+    <footer>
+      Đọc trực tiếp từ <code>report.json</code> ở gốc repo — không cần backend. Cập nhật mỗi lần script chạy.
+    </footer>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script>
+(function () {
+  const REPORT_URL = "../report.json";
+  const DNS_LOGS_URL = "../dns-logs.json";
+  const LIST_ITEM_LIMIT = 300000; // giới hạn gói Free — sửa theo CLOUDFLARE_LIST_ITEM_LIMIT nếu khác
+
+  // Bộ icon SVG dạng stroke, đồng nhất viewBox 24x24 — chèn qua innerHTML nên chỉ chứa path tĩnh, không có script.
+  const ICONS = {
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+    alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>',
+    sync: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 01-15.3 6.4M3 12a9 9 0 0115.3-6.4"/><path d="M3 5v5h5M21 19v-5h-5"/></svg>',
+    rule: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h16"/><circle cx="18" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>',
+    defrag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="8.5" y="14" width="7" height="7" rx="1"/></svg>',
+    download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>',
+    trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg>',
+    generic: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/></svg>',
+  };
+
+  const commandIcon = {
+    "sync-lists": ICONS.sync,
+    "sync-rules": ICONS.rule,
+    "defragment": ICONS.defrag,
+    "download": ICONS.download,
+    "teardown": ICONS.trash,
+  };
+
+  // Chart.js có thể chưa tải kịp (CDN chặn/timeout) — không để việc đó chặn
+  // toàn bộ phần còn lại của dashboard (status, số liệu, lịch sử vẫn phải hiện).
+  if (typeof Chart !== "undefined") {
+    Chart.defaults.font.family = "'IBM Plex Mono', 'SF Mono', Consolas, monospace";
+    Chart.defaults.color = "#6f8286";
+    Chart.defaults.font.size = 11;
+  }
+
+  const CHART_COLORS = { signal: "#4fd6c4", warn: "#e8a33d", err: "#e8593d", grid: "#1e2629" };
+  let domainsChart, deltaChart;
+
+  const fmtShort = (iso) => {
+    const d = new Date(iso);
+    return isNaN(d) ? iso : d.toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit" }) +
+      " " + d.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" });
+  };
+
+  const renderCharts = (sorted) => {
+    if (typeof Chart === "undefined") {
+      // Chart.js chưa tải được (CDN chặn/timeout) — ẩn khung biểu đồ, phần còn lại của
+      // dashboard (trạng thái, số liệu, lịch sử) vẫn hiển thị bình thường.
+      const chartsEl = document.getElementById("charts");
+      if (chartsEl) chartsEl.style.display = "none";
+      return;
+    }
+    // Biểu đồ 1: xu hướng domain theo thời gian, lấy từ các lần sync-lists thành công
+    const syncRuns = sorted
+      .filter(r => r.command === "sync-lists" && r.status === "success" && r.stats?.domainCount != null)
+      .slice()
+      .reverse(); // cũ -> mới, để vẽ trái sang phải
+
+    const domainsBox = document.getElementById("chartDomains").parentElement;
+    if (syncRuns.length < 1) {
+      domainsBox.innerHTML = '<div class="chart-empty">Chưa có đủ dữ liệu sync-lists để vẽ biểu đồ.</div>';
+    } else {
+      const labels = syncRuns.map(r => fmtShort(r.timestamp));
+      const values = syncRuns.map(r => r.stats.domainCount);
+      domainsChart?.destroy();
+      domainsChart = new Chart(document.getElementById("chartDomains"), {
+        type: "line",
+        data: {
+          labels,
+          datasets: [
+            {
+              label: "Domain đang chặn",
+              data: values,
+              borderColor: CHART_COLORS.signal,
+              backgroundColor: "rgba(79,214,196,0.08)",
+              fill: true,
+              tension: 0.25,
+              pointRadius: values.length > 1 ? 2 : 4,
+              pointBackgroundColor: CHART_COLORS.signal,
+              borderWidth: 2,
+            },
+            {
+              label: "Giới hạn (300k)",
+              data: labels.map(() => LIST_ITEM_LIMIT),
+              borderColor: CHART_COLORS.warn,
+              borderDash: [4, 4],
+              borderWidth: 1,
+              pointRadius: 0,
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: { display: true, position: "top", align: "end", labels: { boxWidth: 10, boxHeight: 10, padding: 12 } },
+            tooltip: {
+              backgroundColor: "#12171a",
+              borderColor: "#1e2629",
+              borderWidth: 1,
+              titleColor: "#f2f6f6",
+              bodyColor: "#d7e1e3",
+              callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString("vi-VN")}` },
+            },
+          },
+          scales: {
+            x: { grid: { color: CHART_COLORS.grid }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 6 } },
+            y: {
+              grid: { color: CHART_COLORS.grid },
+              ticks: { callback: (v) => (v >= 1000 ? `${v / 1000}k` : v) },
+              beginAtZero: false,
+            },
+          },
+        },
+      });
+    }
+
+    // Biểu đồ 2: thêm/bớt mỗi lần sync (10 lần gần nhất, cũ -> mới)
+    const deltaRuns = sorted
+      .filter(r => r.command === "sync-lists" && r.status === "success")
+      .slice(0, 10)
+      .reverse();
+
+    const deltaBox = document.getElementById("chartDelta").parentElement;
+    if (deltaRuns.length < 1) {
+      deltaBox.innerHTML = '<div class="chart-empty">Chưa có đủ dữ liệu để vẽ biểu đồ.</div>';
+    } else {
+      const labels = deltaRuns.map(r => fmtShort(r.timestamp));
+      deltaChart?.destroy();
+      deltaChart = new Chart(document.getElementById("chartDelta"), {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [
+            { label: "Thêm", data: deltaRuns.map(r => r.stats?.added ?? 0), backgroundColor: CHART_COLORS.signal, borderRadius: 2, maxBarThickness: 22 },
+            { label: "Bớt", data: deltaRuns.map(r => -(r.stats?.removed ?? 0)), backgroundColor: CHART_COLORS.err, borderRadius: 2, maxBarThickness: 22 },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true, position: "top", align: "end", labels: { boxWidth: 10, boxHeight: 10, padding: 12 } },
+            tooltip: {
+              backgroundColor: "#12171a",
+              borderColor: "#1e2629",
+              borderWidth: 1,
+              titleColor: "#f2f6f6",
+              bodyColor: "#d7e1e3",
+              callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Math.abs(ctx.parsed.y).toLocaleString("vi-VN")}` },
+            },
+          },
+          scales: {
+            x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 5 }, stacked: true },
+            y: { grid: { color: CHART_COLORS.grid }, stacked: true },
+          },
+        },
+      });
+    }
+  };
+
+  const fmtTime = (iso) => {
+    const d = new Date(iso);
+    if (isNaN(d)) return iso;
+    const now = new Date();
+    const sameDay = d.toDateString() === now.toDateString();
+    const date = d.toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit" });
+    const time = d.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" });
+    return sameDay ? `Hôm nay ${time}` : `${date} ${time}`;
+  };
+
+  const commandLabel = {
+    "sync-lists": "Đồng bộ danh sách",
+    "sync-rules": "Đồng bộ luật",
+    "defragment": "Dồn nén danh sách",
+    "teardown": "Gỡ toàn bộ",
+    "download": "Tải nguồn danh sách",
+  };
+
+  const describeRun = (run) => {
+    const s = run.stats || {};
+    if (run.status === "error") return run.error || "Không có chi tiết lỗi.";
+    switch (run.command) {
+      case "sync-lists":
+        return `${s.domainCount ?? "?"} domain sau khi lọc · +${s.added ?? 0} thêm, -${s.removed ?? 0} bớt · ${s.listsUpdated ?? 0} danh sách cập nhật, ${s.listsCreated ?? 0} danh sách mới`;
+      case "sync-rules":
+        return `Luật DNS ${s.dnsRuleId ? "đã áp dụng" : ""}${s.sniEnabled ? " · Luật SNI đã áp dụng" : " · SNI tắt"}`;
+      case "defragment":
+        return `${s.movedEntries ?? 0} mục được sắp xếp lại · ${s.emptyLists ?? 0} danh sách rỗng đã xoá · còn ${s.nonEmptyLists ?? 0} danh sách`;
+      case "download":
+        return (s.files || []).map(f => `${f.filename} (${f.sources} nguồn)`).join(" · ");
+      case "teardown":
+        return `Đã xoá ${s.rulesDeleted ?? 0} luật, ${s.listsDeleted ?? 0} danh sách`;
+      default:
+        return JSON.stringify(s);
+    }
+  };
+
+  // ── DNS query logs ──────────────────────────────────────────────────
+  const DECISION_LABELS = { allow: "Cho phép", block: "Bị chặn", override: "Ghi đè", isolate: "Cách ly" };
+  const decisionLabel = (d) => DECISION_LABELS[d] ?? d ?? "Không rõ";
+  const decisionClass = (d) => (d === "block" ? "block" : d === "allow" ? "allow" : "other");
+
+  let dnsLogData = null;
+  let dnsFilter = "all";
+  let dnsHourlyChart;
+
+  const fmtHour = (iso) => {
+    const d = new Date(iso);
+    return isNaN(d) ? iso : d.toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+  };
+
+  const renderDnsLogRows = () => {
+    const rowsEl = document.getElementById("dnsLogRows");
+    if (!dnsLogData) return;
+    const rows = dnsFilter === "all" ? dnsLogData.recent : dnsLogData.recent.filter(r => r.decision === dnsFilter);
+    if (!rows.length) {
+      rowsEl.innerHTML = `<tr><td colspan="4" style="text-align:center;color:var(--ink-dim);padding:20px;">Không có dòng nào khớp bộ lọc.</td></tr>`;
+      return;
+    }
+    rowsEl.innerHTML = rows.map(r => `
+      <tr>
+        <td class="domain-cell">${escapeHtml(r.domain)}</td>
+        <td><span class="decision-badge ${decisionClass(r.decision)}">${escapeHtml(decisionLabel(r.decision))}</span></td>
+        <td>${fmtHour(r.hour)}</td>
+        <td>${r.count.toLocaleString("vi-VN")}</td>
+      </tr>
+    `).join("");
+  };
+
+  const renderDnsLogs = (data) => {
+    const section = document.getElementById("dnsSection");
+    if (!data || (!data.recent?.length && !data.topBlocked?.length && !data.topAllowed?.length)) {
+      section.style.display = "none";
+      return;
+    }
+    dnsLogData = data;
+    section.style.display = "";
+
+    document.getElementById("dnsWindow").textContent = `${data.windowHours ?? 24} giờ gần nhất · cập nhật ${fmtHour(data.generatedAt)}`;
+
+    const totals = data.totals || {};
+    document.getElementById("dnsTotals").innerHTML = [
+      { label: "Bị chặn", value: totals.block ?? 0, cls: "block" },
+      { label: "Cho phép", value: totals.allow ?? 0, cls: "allow" },
+      { label: "Khác", value: totals.other ?? 0, cls: "" },
+    ].map(t => `
+      <div class="dns-total">
+        <p class="stat-label">${t.label}</p>
+        <p class="stat-value ${t.cls}">${t.value.toLocaleString("vi-VN")}</p>
+      </div>
+    `).join("");
+
+    const topList = (items) => (items || []).map(i => `
+      <li class="dns-top-row">
+        <span class="dns-top-domain" title="${escapeHtml(i.domain)}">${escapeHtml(i.domain)}</span>
+        <span class="dns-top-count">${i.count.toLocaleString("vi-VN")}</span>
+      </li>
+    `).join("") || `<li class="dns-top-row"><span class="dns-top-domain" style="color:var(--ink-dim)">Không có dữ liệu</span></li>`;
+    document.getElementById("dnsTopBlocked").innerHTML = topList(data.topBlocked);
+    document.getElementById("dnsTopAllowed").innerHTML = topList(data.topAllowed);
+
+    const rootSection = document.getElementById("dnsRootSection");
+    if (data.topRootDomains?.length || data.gafamBreakdown?.length) {
+      rootSection.style.display = "";
+      document.getElementById("dnsRootDomains").innerHTML = topList(data.topRootDomains);
+
+      const gafamList = (data.gafamBreakdown || []).map(g => `
+        <li class="dns-top-row">
+          <span class="dns-top-domain">${escapeHtml(g.owner)}</span>
+          <span class="dns-top-count">${g.percent.toFixed(2)}%</span>
+        </li>
+      `).join("") || `<li class="dns-top-row"><span class="dns-top-domain" style="color:var(--ink-dim)">Không có dữ liệu</span></li>`;
+      document.getElementById("dnsGafam").innerHTML = gafamList;
+    } else {
+      rootSection.style.display = "none";
+    }
+
+    if (typeof Chart !== "undefined" && data.hourly?.length) {
+      const labels = data.hourly.map(h => fmtHour(h.hour));
+      dnsHourlyChart?.destroy();
+      dnsHourlyChart = new Chart(document.getElementById("chartDnsHourly"), {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [
+            { label: "Cho phép", data: data.hourly.map(h => h.allow || 0), backgroundColor: CHART_COLORS.signal, borderRadius: 2, maxBarThickness: 18, stack: "s" },
+            { label: "Bị chặn", data: data.hourly.map(h => h.block || 0), backgroundColor: CHART_COLORS.err, borderRadius: 2, maxBarThickness: 18, stack: "s" },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true, position: "top", align: "end", labels: { boxWidth: 10, boxHeight: 10, padding: 12 } },
+            tooltip: {
+              backgroundColor: "#12171a", borderColor: "#1e2629", borderWidth: 1,
+              titleColor: "#f2f6f6", bodyColor: "#d7e1e3",
+              callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString("vi-VN")}` },
+            },
+          },
+          scales: {
+            x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 6 }, stacked: true },
+            y: { grid: { color: CHART_COLORS.grid }, stacked: true },
+          },
+        },
+      });
+    }
+
+    renderDnsLogRows();
+  };
+
+  document.getElementById("dnsFilters")?.addEventListener("click", (e) => {
+    const btn = e.target.closest(".dns-filter-btn");
+    if (!btn) return;
+    dnsFilter = btn.dataset.filter;
+    document.querySelectorAll(".dns-filter-btn").forEach(b => b.classList.toggle("active", b === btn));
+    renderDnsLogRows();
+  });
+
+  const render = (history) => {
+    const statusIcon = document.getElementById("statusIcon");
+    const statusText = document.getElementById("statusText");
+    const statsEl = document.getElementById("stats");
+    const runsEl = document.getElementById("runs");
+
+    if (!history.length) {
+      statusIcon.className = "";
+      statusIcon.innerHTML = ICONS.generic;
+      statusText.textContent = "Chưa có dữ liệu";
+      runsEl.innerHTML = '<div class="empty">Chưa có lần chạy nào được ghi lại.</div>';
+      document.getElementById("charts").style.display = "none";
+      return;
+    }
+
+    const sorted = [...history].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    const latest = sorted[0];
+    const latestSync = sorted.find(r => r.command === "sync-lists");
+
+    const latestOk = latest.status === "success";
+    statusIcon.className = latestOk ? "ok" : "err pulse";
+    statusIcon.innerHTML = latestOk ? ICONS.check : ICONS.alert;
+    statusText.textContent = latestOk ? "Đang hoạt động" : "Lần chạy gần nhất lỗi";
+
+    const domainCount = latestSync?.stats?.domainCount;
+    const listsTotal = (latestSync?.stats?.listsUpdated ?? 0) + (latestSync?.stats?.listsCreated ?? 0);
+    const errorCount = sorted.filter(r => r.status === "error").length;
+
+    statsEl.innerHTML = [
+      { label: "Domain đang chặn", value: domainCount != null ? domainCount.toLocaleString("vi-VN") : "—", cls: "signal" },
+      { label: "Lần chạy gần nhất", value: fmtTime(latest.timestamp).replace("Hôm nay ", ""), cls: "" },
+      { label: "Danh sách chạm tới", value: listsTotal || "—", cls: "" },
+      { label: "Lỗi trong " + sorted.length + " lần", value: errorCount, cls: errorCount ? "warn" : "signal" },
+    ].map(s => `
+      <div class="stat">
+        <p class="stat-label">${s.label}</p>
+        <p class="stat-value ${s.cls}">${s.value}</p>
+      </div>
+    `).join("");
+
+    renderCharts(sorted);
+
+    runsEl.innerHTML = sorted.slice(0, 30).map(run => `
+      <div class="run">
+        <div class="run-rail">
+          <div class="run-icon ${run.status === "error" ? "err" : ""}">${run.status === "error" ? ICONS.alert : (commandIcon[run.command] || ICONS.generic)}</div>
+        </div>
+        <div class="run-time">${fmtTime(run.timestamp)}</div>
+        <div class="run-body">
+          <p class="run-command"><span class="cmd-name">${commandLabel[run.command] || run.command}</span></p>
+          <p class="run-detail">${run.status === "error" ? `<span class="err-msg">${escapeHtml(describeRun(run))}</span>` : escapeHtml(describeRun(run))}</p>
+        </div>
+        <span class="run-badge ${run.status === "error" ? "err" : ""}">${run.status === "error" ? "Lỗi" : "OK"}</span>
+      </div>
+    `).join("");
+  };
+
+  const escapeHtml = (str) => String(str).replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[c]));
+
+  fetch(REPORT_URL, { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error("Không tìm thấy report.json"); return r.json(); })
+    .then(history => render(Array.isArray(history) ? history : []))
+    .catch(err => {
+      const statusIcon = document.getElementById("statusIcon");
+      statusIcon.className = "err";
+      statusIcon.innerHTML = ICONS.alert;
+      document.getElementById("statusText").textContent = "Không tải được dữ liệu";
+      document.getElementById("runs").innerHTML =
+        `<div class="empty">Không đọc được report.json, hoặc dashboard gặp lỗi khi hiển thị.<br>Chạy script đồng bộ ít nhất một lần, hoặc mở trang này qua HTTP (không phải file://).<br><br>${escapeHtml(err.message)}</div>`;
+      console.error("Dashboard render error:", err);
+    });
+
+  // Độc lập với report.json — nếu chưa có dns-logs.json hoặc lỗi, chỉ ẩn
+  // khu vực này, không ảnh hưởng phần còn lại của dashboard.
+  fetch(DNS_LOGS_URL, { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error("no dns-logs.json"); return r.json(); })
+    .then(data => renderDnsLogs(data))
+    .catch(() => {
+      const section = document.getElementById("dnsSection");
+      if (section) section.style.display = "none";
+    });
+})();
+</script>
+</body>
+</html>

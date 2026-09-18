@@ -1,0 +1,44 @@
+{
+  "name": "dns-sync-gateway",
+  "version": "4.0.0",
+  "type": "module",
+  "description": "Đồng bộ danh sách chặn DNS lên Cloudflare Gateway — kiến trúc mới, có dashboard theo dõi.",
+  "license": "MIT",
+  "scripts": {
+    "download": "node src/cli/download.js",
+    "sync:lists": "node src/cli/sync-lists.js",
+    "sync:rules": "node src/cli/sync-rules.js",
+    "sync": "npm run sync:lists && npm run sync:rules",
+    "start": "npm run download && npm run sync",
+    "dry": "cross-env DRY_RUN=1 npm run start",
+    "defragment": "node src/cli/defragment.js",
+    "dns-logs": "node src/cli/dns-logs.js",
+    "introspect-dns-fields": "node src/cli/introspect-dns-fields.js",
+    "teardown": "node src/cli/teardown.js",
+    "test": "node --test test/**/*.test.js",
+    "test:watch": "node --test --watch test/**/*.test.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{js,json,md,yml,yaml,html}\""
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^9.24.0",
+    "prettier": "^3.6.0"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "printWidth": 100,
+    "arrowParens": "always",
+    "endOfLine": "lf"
+  }
+}

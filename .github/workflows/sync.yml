@@ -1,0 +1,62 @@
+name: Đồng bộ DNS lên Cloudflare
+
+on:
+  schedule:
+    - cron: '0 17 * * *' # 00:00 giờ Việt Nam
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Đồng bộ danh sách và luật
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          ALLOWLIST_URLS: ${{ vars.ALLOWLIST_URLS }}
+          BLOCKLIST_URLS: ${{ vars.BLOCKLIST_URLS }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: npm start
+
+      - name: Lấy log DNS từ Cloudflare
+        # Cần token có thêm quyền "Account Analytics: Read". Nếu thiếu quyền
+        # hoặc lỗi tạm thời, không làm fail cả workflow — sync chính đã xong.
+        # Lưu ý: dns-logs cũng được chạy riêng mỗi 15 phút bởi
+        # .github/workflows/dns-logs.yml — bước này giữ lại để log luôn
+        # được làm mới ngay sau khi sync list/rule xong.
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: npm run dns-logs
+
+      - name: Commit report.json
+        if: always()
+        run: |
+          git config user.name "dns-sync-bot"
+          git config user.email "actions@github.com"
+          git add report.json
+          [ -f dns-logs.json ] && git add dns-logs.json
+          git diff --staged --quiet || git commit -m "chore: cập nhật report.json và dns-logs.json [skip ci]"
+          git push
