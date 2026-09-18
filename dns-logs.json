@@ -1,10 +1,10 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-18T21:17:03.518Z",
+  "generatedAt": "2026-09-18T23:31:16.166Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 1080
+    "other": 1100
   },
   "topBlocked": [],
   "topAllowed": [],
@@ -50,18 +50,36 @@
       "allow": 0,
       "block": 0,
       "other": 140
+    },
+    {
+      "hour": "2026-09-18T23:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 20
     }
   ],
   "recent": [
     {
-      "domain": "googleads.g.doubleclick.net",
-      "decision": 9,
-      "count": 40,
-      "hour": "2026-09-18T11:00:00Z"
+      "domain": "clients4.google.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-18T23:00:00Z"
+    },
+    {
+      "domain": "clientservices.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-18T23:00:00Z"
     },
     {
       "domain": "www.youtube.com",
       "decision": 5,
+      "count": 40,
+      "hour": "2026-09-18T11:00:00Z"
+    },
+    {
+      "domain": "googleads.g.doubleclick.net",
+      "decision": 9,
       "count": 40,
       "hour": "2026-09-18T11:00:00Z"
     },
@@ -78,13 +96,13 @@
       "hour": "2026-09-18T11:00:00Z"
     },
     {
-      "domain": "update.googleapis.com",
+      "domain": "jnn-pa.googleapis.com",
       "decision": 5,
       "count": 10,
       "hour": "2026-09-18T11:00:00Z"
     },
     {
-      "domain": "jnn-pa.googleapis.com",
+      "domain": "update.googleapis.com",
       "decision": 5,
       "count": 10,
       "hour": "2026-09-18T11:00:00Z"
@@ -114,14 +132,14 @@
       "hour": "2026-09-18T09:00:00Z"
     },
     {
-      "domain": "www.googletagmanager.com",
-      "decision": 9,
+      "domain": "www.youtube.com",
+      "decision": 5,
       "count": 20,
       "hour": "2026-09-18T09:00:00Z"
     },
     {
-      "domain": "www.youtube.com",
-      "decision": 5,
+      "domain": "www.googletagmanager.com",
+      "decision": 9,
       "count": 20,
       "hour": "2026-09-18T09:00:00Z"
     },
@@ -186,14 +204,14 @@
       "hour": "2026-09-18T08:00:00Z"
     },
     {
-      "domain": "update.googleapis.com",
-      "decision": 5,
+      "domain": "pre.glotgrx.com",
+      "decision": 9,
       "count": 10,
       "hour": "2026-09-18T08:00:00Z"
     },
     {
-      "domain": "pre.glotgrx.com",
-      "decision": 9,
+      "domain": "update.googleapis.com",
+      "decision": 5,
       "count": 10,
       "hour": "2026-09-18T08:00:00Z"
     },
@@ -258,14 +276,14 @@
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "genk.vn",
-      "decision": 5,
+      "domain": "beacons.gvt2.com",
+      "decision": 9,
       "count": 30,
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "beacons.gvt2.com",
-      "decision": 9,
+      "domain": "genk.vn",
+      "decision": 5,
       "count": 30,
       "hour": "2026-09-17T23:00:00Z"
     },
@@ -297,7 +315,7 @@
   "topRootDomains": [
     {
       "domain": "google.com",
-      "count": 200
+      "count": 210
     },
     {
       "domain": "gvt2.com",
@@ -305,7 +323,7 @@
     },
     {
       "domain": "googleapis.com",
-      "count": 100
+      "count": 110
     },
     {
       "domain": "gvt3.com",
@@ -364,13 +382,13 @@
     {
       "owner": "Khác",
       "count": 680,
-      "percent": 62.96
+      "percent": 61.82
     },
     {
       "owner": "Google",
-      "count": 400,
-      "percent": 37.04
+      "count": 420,
+      "percent": 38.18
     }
   ],
-  "totalResolvedQueries": 1080
+  "totalResolvedQueries": 1100
 }
