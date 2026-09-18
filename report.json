@@ -1,21 +1,5 @@
 [
   {
-    "timestamp": "2026-08-20T17:21:09.290Z",
-    "status": "success",
-    "command": "dns-logs",
-    "stats": {
-      "windowHours": 24,
-      "totals": {
-        "allow": 0,
-        "block": 0,
-        "other": 1593
-      },
-      "topBlockedCount": 0,
-      "topAllowedCount": 0,
-      "recentRows": 50
-    }
-  },
-  {
     "timestamp": "2026-08-21T17:18:57.129Z",
     "status": "success",
     "command": "download",
@@ -890,6 +874,22 @@
       "topBlockedCount": 0,
       "topAllowedCount": 0,
       "recentRows": 50
+    }
+  },
+  {
+    "timestamp": "2026-09-18T15:12:13.393Z",
+    "status": "success",
+    "command": "dns-logs",
+    "stats": {
+      "windowHours": 24,
+      "totals": {
+        "allow": 0,
+        "block": 0,
+        "other": 1220
+      },
+      "topBlockedCount": 0,
+      "topAllowedCount": 0,
+      "recentRows": 47
     }
   }
 ]
