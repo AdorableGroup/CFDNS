@@ -1,6 +1,6 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-18T01:23:51.063Z",
+  "generatedAt": "2026-09-18T01:32:58.259Z",
   "totals": {
     "allow": 0,
     "block": 0,
@@ -174,20 +174,32 @@
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "beacons2.gvt2.com",
-      "decision": 9,
-      "count": 4,
-      "hour": "2026-09-17T23:00:00Z"
-    },
-    {
       "domain": "safebrowsing.google.com",
       "decision": 9,
       "count": 4,
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "ccd.mediacdn.vn",
+      "domain": "t0.gstatic.com",
       "decision": 5,
+      "count": 4,
+      "hour": "2026-09-17T23:00:00Z"
+    },
+    {
+      "domain": "cdn.gsmarena.com",
+      "decision": 5,
+      "count": 4,
+      "hour": "2026-09-17T23:00:00Z"
+    },
+    {
+      "domain": "beacons2.gvt2.com",
+      "decision": 9,
+      "count": 4,
+      "hour": "2026-09-17T23:00:00Z"
+    },
+    {
+      "domain": "beacons.gvt2.com",
+      "decision": 9,
       "count": 4,
       "hour": "2026-09-17T23:00:00Z"
     },
@@ -204,26 +216,20 @@
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "adi.admicro.vn",
-      "decision": 9,
-      "count": 4,
-      "hour": "2026-09-17T23:00:00Z"
-    },
-    {
-      "domain": "t0.gstatic.com",
-      "decision": 5,
-      "count": 4,
-      "hour": "2026-09-17T23:00:00Z"
-    },
-    {
       "domain": "event.mediacdn.vn",
       "decision": 5,
       "count": 4,
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "beacons.gvt2.com",
+      "domain": "adi.admicro.vn",
       "decision": 9,
+      "count": 4,
+      "hour": "2026-09-17T23:00:00Z"
+    },
+    {
+      "domain": "ccd.mediacdn.vn",
+      "decision": 5,
       "count": 4,
       "hour": "2026-09-17T23:00:00Z"
     },
@@ -234,25 +240,19 @@
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "cdn.gsmarena.com",
-      "decision": 5,
-      "count": 4,
-      "hour": "2026-09-17T23:00:00Z"
-    },
-    {
-      "domain": "beacons3.gvt2.com",
+      "domain": "beacons.gcp.gvt2.com",
       "decision": 9,
       "count": 3,
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "genk.vn",
-      "decision": 5,
+      "domain": "static.amcdn.vn",
+      "decision": 9,
       "count": 3,
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "beacons.gcp.gvt2.com",
+      "domain": "beacons3.gvt2.com",
       "decision": 9,
       "count": 3,
       "hour": "2026-09-17T23:00:00Z"
@@ -264,20 +264,8 @@
       "hour": "2026-09-17T23:00:00Z"
     },
     {
-      "domain": "static.amcdn.vn",
-      "decision": 9,
-      "count": 3,
-      "hour": "2026-09-17T23:00:00Z"
-    },
-    {
       "domain": "beacons5.gvt2.com",
       "decision": 9,
-      "count": 3,
-      "hour": "2026-09-17T23:00:00Z"
-    },
-    {
-      "domain": "a.nel.cloudflare.com",
-      "decision": 10,
       "count": 3,
       "hour": "2026-09-17T23:00:00Z"
     },
@@ -289,6 +277,18 @@
     },
     {
       "domain": "chromesyncpreview.pa.googleapis.com",
+      "decision": 5,
+      "count": 3,
+      "hour": "2026-09-17T23:00:00Z"
+    },
+    {
+      "domain": "a.nel.cloudflare.com",
+      "decision": 10,
+      "count": 3,
+      "hour": "2026-09-17T23:00:00Z"
+    },
+    {
+      "domain": "genk.vn",
       "decision": 5,
       "count": 3,
       "hour": "2026-09-17T23:00:00Z"
