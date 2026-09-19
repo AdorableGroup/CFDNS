@@ -1,10 +1,10 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-19T19:08:26.688Z",
+  "generatedAt": "2026-09-19T20:21:31.906Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 590
+    "other": 1000
   },
   "topBlocked": [],
   "topAllowed": [],
@@ -44,9 +44,87 @@
       "allow": 0,
       "block": 0,
       "other": 20
+    },
+    {
+      "hour": "2026-09-19T19:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 410
     }
   ],
   "recent": [
+    {
+      "domain": "beacons.gcp.gvt2.com",
+      "decision": 9,
+      "count": 100,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "beacons4.gvt2.com",
+      "decision": 9,
+      "count": 60,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "play.google.com",
+      "decision": 5,
+      "count": 50,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "beacons3.gvt2.com",
+      "decision": 9,
+      "count": 40,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "beacons5.gvt2.com",
+      "decision": 9,
+      "count": 30,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "beacons2.gvt2.com",
+      "decision": 9,
+      "count": 30,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "content-autofill.googleapis.com",
+      "decision": 5,
+      "count": 30,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "upload.wikimedia.org",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "beacons.gvt2.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "readaloud.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "cdn.petrotimes.vn",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
+      "domain": "lookaside.fbsbx.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-19T19:00:00Z"
+    },
     {
       "domain": "encrypted-tbn0.gstatic.com",
       "decision": 5,
@@ -108,12 +186,6 @@
       "hour": "2026-09-19T10:00:00Z"
     },
     {
-      "domain": "beacons4.gvt2.com",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-19T10:00:00Z"
-    },
-    {
       "domain": "www.gstatic.com",
       "decision": 5,
       "count": 20,
@@ -126,13 +198,19 @@
       "hour": "2026-09-19T10:00:00Z"
     },
     {
-      "domain": "translate.googleapis.com",
+      "domain": "beacons4.gvt2.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-19T10:00:00Z"
+    },
+    {
+      "domain": "clientservices.googleapis.com",
       "decision": 5,
       "count": 10,
       "hour": "2026-09-19T10:00:00Z"
     },
     {
-      "domain": "clientservices.googleapis.com",
+      "domain": "translate.googleapis.com",
       "decision": 5,
       "count": 10,
       "hour": "2026-09-19T10:00:00Z"
@@ -207,19 +285,19 @@
   "topRootDomains": [
     {
       "domain": "gvt2.com",
-      "count": 160
+      "count": 440
     },
     {
       "domain": "googleapis.com",
+      "count": 150
+    },
+    {
+      "domain": "google.com",
       "count": 110
     },
     {
       "domain": "gstatic.com",
       "count": 80
-    },
-    {
-      "domain": "google.com",
-      "count": 60
     },
     {
       "domain": "cloudflareinsights.com",
@@ -238,25 +316,37 @@
       "count": 30
     },
     {
+      "domain": "wikimedia.org",
+      "count": 20
+    },
+    {
       "domain": "kenh14.vn",
       "count": 10
     },
     {
       "domain": "gucci.com",
       "count": 10
+    },
+    {
+      "domain": "petrotimes.vn",
+      "count": 10
+    },
+    {
+      "domain": "fbsbx.com",
+      "count": 10
     }
   ],
   "gafamBreakdown": [
     {
       "owner": "Khác",
-      "count": 340,
-      "percent": 57.63
+      "count": 660,
+      "percent": 66
     },
     {
       "owner": "Google",
-      "count": 250,
-      "percent": 42.37
+      "count": 340,
+      "percent": 34
     }
   ],
-  "totalResolvedQueries": 590
+  "totalResolvedQueries": 1000
 }
