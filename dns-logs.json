@@ -1,6 +1,6 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-19T20:21:31.906Z",
+  "generatedAt": "2026-09-19T22:25:55.791Z",
   "totals": {
     "allow": 0,
     "block": 0,
@@ -78,6 +78,12 @@
       "hour": "2026-09-19T19:00:00Z"
     },
     {
+      "domain": "content-autofill.googleapis.com",
+      "decision": 5,
+      "count": 30,
+      "hour": "2026-09-19T19:00:00Z"
+    },
+    {
       "domain": "beacons5.gvt2.com",
       "decision": 9,
       "count": 30,
@@ -90,20 +96,14 @@
       "hour": "2026-09-19T19:00:00Z"
     },
     {
-      "domain": "content-autofill.googleapis.com",
-      "decision": 5,
-      "count": 30,
+      "domain": "beacons.gvt2.com",
+      "decision": 9,
+      "count": 20,
       "hour": "2026-09-19T19:00:00Z"
     },
     {
       "domain": "upload.wikimedia.org",
       "decision": 5,
-      "count": 20,
-      "hour": "2026-09-19T19:00:00Z"
-    },
-    {
-      "domain": "beacons.gvt2.com",
-      "decision": 9,
       "count": 20,
       "hour": "2026-09-19T19:00:00Z"
     },
@@ -126,13 +126,13 @@
       "hour": "2026-09-19T19:00:00Z"
     },
     {
-      "domain": "encrypted-tbn0.gstatic.com",
+      "domain": "www.gstatic.com",
       "decision": 5,
       "count": 10,
       "hour": "2026-09-19T11:00:00Z"
     },
     {
-      "domain": "www.gstatic.com",
+      "domain": "encrypted-tbn0.gstatic.com",
       "decision": 5,
       "count": 10,
       "hour": "2026-09-19T11:00:00Z"
@@ -162,12 +162,6 @@
       "hour": "2026-09-19T10:00:00Z"
     },
     {
-      "domain": "www.googletagmanager.com",
-      "decision": 9,
-      "count": 30,
-      "hour": "2026-09-19T10:00:00Z"
-    },
-    {
       "domain": "beacons3.gvt2.com",
       "decision": 9,
       "count": 30,
@@ -186,6 +180,18 @@
       "hour": "2026-09-19T10:00:00Z"
     },
     {
+      "domain": "www.googletagmanager.com",
+      "decision": 9,
+      "count": 30,
+      "hour": "2026-09-19T10:00:00Z"
+    },
+    {
+      "domain": "beacons4.gvt2.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-19T10:00:00Z"
+    },
+    {
       "domain": "www.gstatic.com",
       "decision": 5,
       "count": 20,
@@ -198,19 +204,13 @@
       "hour": "2026-09-19T10:00:00Z"
     },
     {
-      "domain": "beacons4.gvt2.com",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-19T10:00:00Z"
-    },
-    {
-      "domain": "clientservices.googleapis.com",
+      "domain": "translate.googleapis.com",
       "decision": 5,
       "count": 10,
       "hour": "2026-09-19T10:00:00Z"
     },
     {
-      "domain": "translate.googleapis.com",
+      "domain": "clientservices.googleapis.com",
       "decision": 5,
       "count": 10,
       "hour": "2026-09-19T10:00:00Z"

@@ -1,22 +1,5 @@
 [
   {
-    "timestamp": "2026-08-25T17:24:55.377Z",
-    "status": "success",
-    "command": "sync-lists",
-    "stats": {
-      "domainCount": 284983,
-      "processed": 285816,
-      "invalid": 48,
-      "skipped": 833,
-      "limitReached": false,
-      "listsUpdated": 242,
-      "listsCreated": 0,
-      "added": 1275,
-      "removed": 713,
-      "totalDomains": 284983
-    }
-  },
-  {
     "timestamp": "2026-08-25T17:24:57.534Z",
     "status": "success",
     "command": "sync-rules",
@@ -886,6 +869,22 @@
   },
   {
     "timestamp": "2026-09-19T20:21:31.907Z",
+    "status": "success",
+    "command": "dns-logs",
+    "stats": {
+      "windowHours": 24,
+      "totals": {
+        "allow": 0,
+        "block": 0,
+        "other": 1000
+      },
+      "topBlockedCount": 0,
+      "topAllowedCount": 0,
+      "recentRows": 38
+    }
+  },
+  {
+    "timestamp": "2026-09-19T22:25:55.792Z",
     "status": "success",
     "command": "dns-logs",
     "stats": {
