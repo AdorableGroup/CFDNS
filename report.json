@@ -1,14 +1,5 @@
 [
   {
-    "timestamp": "2026-08-25T17:24:57.534Z",
-    "status": "success",
-    "command": "sync-rules",
-    "stats": {
-      "dnsRuleId": "de9a9dc3-f602-456f-9535-4a1ad1952715",
-      "sniEnabled": false
-    }
-  },
-  {
     "timestamp": "2026-08-25T17:24:58.154Z",
     "status": "success",
     "command": "dns-logs",
@@ -897,6 +888,22 @@
       "topBlockedCount": 0,
       "topAllowedCount": 0,
       "recentRows": 38
+    }
+  },
+  {
+    "timestamp": "2026-09-20T00:18:31.978Z",
+    "status": "success",
+    "command": "dns-logs",
+    "stats": {
+      "windowHours": 24,
+      "totals": {
+        "allow": 0,
+        "block": 0,
+        "other": 859
+      },
+      "topBlockedCount": 0,
+      "topAllowedCount": 0,
+      "recentRows": 50
     }
   }
 ]
