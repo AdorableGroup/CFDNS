@@ -1,20 +1,14 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-21T20:45:12.954Z",
+  "generatedAt": "2026-09-21T20:59:40.462Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 5340
+    "other": 5320
   },
   "topBlocked": [],
   "topAllowed": [],
   "hourly": [
-    {
-      "hour": "2026-09-20T20:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 20
-    },
     {
       "hour": "2026-09-20T21:00:00Z",
       "allow": 0,
@@ -465,7 +459,7 @@
   "topRootDomains": [
     {
       "domain": "googleapis.com",
-      "count": 1200
+      "count": 1190
     },
     {
       "domain": "google.com",
@@ -484,12 +478,12 @@
       "count": 180
     },
     {
-      "domain": "facebook.com",
+      "domain": "app-measurement.com",
       "count": 170
     },
     {
-      "domain": "app-measurement.com",
-      "count": 170
+      "domain": "facebook.com",
+      "count": 160
     },
     {
       "domain": "intlgame.com",
@@ -548,18 +542,18 @@
     {
       "owner": "Khác",
       "count": 2890,
-      "percent": 54.12
+      "percent": 54.32
     },
     {
       "owner": "Google",
-      "count": 2280,
-      "percent": 42.7
+      "count": 2270,
+      "percent": 42.67
     },
     {
       "owner": "Meta",
-      "count": 170,
-      "percent": 3.18
+      "count": 160,
+      "percent": 3.01
     }
   ],
-  "totalResolvedQueries": 5340
+  "totalResolvedQueries": 5320
 }
