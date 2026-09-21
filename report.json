@@ -1,11 +1,5 @@
 [
   {
-    "timestamp": "2026-08-29T19:35:01.043Z",
-    "status": "error",
-    "command": "sync-lists",
-    "error": "Error: HTTP error! Status: 400"
-  },
-  {
     "timestamp": "2026-08-30T19:33:47.287Z",
     "status": "success",
     "command": "download",
@@ -911,6 +905,22 @@
         "allow": 0,
         "block": 0,
         "other": 4434
+      },
+      "topBlockedCount": 0,
+      "topAllowedCount": 0,
+      "recentRows": 50
+    }
+  },
+  {
+    "timestamp": "2026-09-21T11:00:05.377Z",
+    "status": "success",
+    "command": "dns-logs",
+    "stats": {
+      "windowHours": 24,
+      "totals": {
+        "allow": 0,
+        "block": 0,
+        "other": 4876
       },
       "topBlockedCount": 0,
       "topAllowedCount": 0,
