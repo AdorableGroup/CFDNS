@@ -1,23 +1,5 @@
 [
   {
-    "timestamp": "2026-08-29T19:33:44.490Z",
-    "status": "success",
-    "command": "download",
-    "stats": {
-      "files": [
-        {
-          "filename": "allowlist.txt",
-          "sources": 12
-        },
-        {
-          "filename": "blocklist.txt",
-          "sources": 2
-        }
-      ],
-      "elapsedSeconds": "1.7"
-    }
-  },
-  {
     "timestamp": "2026-08-29T19:35:01.043Z",
     "status": "error",
     "command": "sync-lists",
@@ -913,6 +895,22 @@
         "allow": 0,
         "block": 0,
         "other": 3782
+      },
+      "topBlockedCount": 0,
+      "topAllowedCount": 0,
+      "recentRows": 50
+    }
+  },
+  {
+    "timestamp": "2026-09-21T05:19:33.011Z",
+    "status": "success",
+    "command": "dns-logs",
+    "stats": {
+      "windowHours": 24,
+      "totals": {
+        "allow": 0,
+        "block": 0,
+        "other": 4434
       },
       "topBlockedCount": 0,
       "topAllowedCount": 0,
