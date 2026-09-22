@@ -1,25 +1,19 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-22T20:02:24.567Z",
+  "generatedAt": "2026-09-22T21:35:36.846Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 5670
+    "other": 5710
   },
   "topBlocked": [],
   "topAllowed": [],
   "hourly": [
     {
-      "hour": "2026-09-21T20:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 70
-    },
-    {
       "hour": "2026-09-21T21:00:00Z",
       "allow": 0,
       "block": 0,
-      "other": 50
+      "other": 40
     },
     {
       "hour": "2026-09-21T22:00:00Z",
@@ -146,9 +140,63 @@
       "allow": 0,
       "block": 0,
       "other": 100
+    },
+    {
+      "hour": "2026-09-22T20:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 40
+    },
+    {
+      "hour": "2026-09-22T21:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 80
     }
   ],
   "recent": [
+    {
+      "domain": "app-measurement.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-22T21:00:00Z"
+    },
+    {
+      "domain": "firebaseinstallations.googleapis.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-22T21:00:00Z"
+    },
+    {
+      "domain": "api.account.samsung.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-22T21:00:00Z"
+    },
+    {
+      "domain": "android.apis.google.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-22T21:00:00Z"
+    },
+    {
+      "domain": "userlocation.googleapis.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-22T21:00:00Z"
+    },
+    {
+      "domain": "taskassist-pa.googleapis.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-22T20:00:00Z"
+    },
+    {
+      "domain": "firebaseinstallations.googleapis.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-22T20:00:00Z"
+    },
     {
       "domain": "api.weather.com",
       "decision": 5,
@@ -228,13 +276,13 @@
       "hour": "2026-09-22T17:00:00Z"
     },
     {
-      "domain": "api.shopee.vn",
+      "domain": "down-zl-vn.img.susercontent.com",
       "decision": 5,
       "count": 20,
       "hour": "2026-09-22T17:00:00Z"
     },
     {
-      "domain": "down-zl-vn.img.susercontent.com",
+      "domain": "api.shopee.vn",
       "decision": 5,
       "count": 20,
       "hour": "2026-09-22T17:00:00Z"
@@ -406,54 +454,12 @@
       "decision": 9,
       "count": 30,
       "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "robinfrontend-pa.googleapis.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "www.googleadservices.com",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "cdn.liftoff-creatives.io",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "encrypted-tbn0.gstatic.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "clienttracing-pa.googleapis.com",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "a2tnxf.launches.appsflyersdk.com",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "subscriptionsfirstparty-pa.googleapis.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-22T12:00:00Z"
     }
   ],
   "topRootDomains": [
     {
       "domain": "googleapis.com",
-      "count": 1510
+      "count": 1530
     },
     {
       "domain": "gvt2.com",
@@ -461,7 +467,7 @@
     },
     {
       "domain": "google.com",
-      "count": 640
+      "count": 650
     },
     {
       "domain": "gstatic.com",
@@ -484,6 +490,10 @@
       "count": 100
     },
     {
+      "domain": "app-measurement.com",
+      "count": 100
+    },
+    {
       "domain": "claude.ai",
       "count": 90
     },
@@ -500,16 +510,12 @@
       "count": 80
     },
     {
-      "domain": "app-measurement.com",
+      "domain": "susercontent.com",
       "count": 80
     },
     {
       "domain": "weather.com",
-      "count": 80
-    },
-    {
-      "domain": "susercontent.com",
-      "count": 80
+      "count": 70
     },
     {
       "domain": "doubleclick.net",
@@ -528,20 +534,20 @@
       "count": 50
     },
     {
-      "domain": "applovin.com",
-      "count": 50
+      "domain": "ytimg.com",
+      "count": 40
     }
   ],
   "gafamBreakdown": [
     {
       "owner": "Google",
-      "count": 2860,
-      "percent": 50.44
+      "count": 2890,
+      "percent": 50.61
     },
     {
       "owner": "Khác",
-      "count": 2790,
-      "percent": 49.21
+      "count": 2800,
+      "percent": 49.04
     },
     {
       "owner": "Meta",
@@ -549,5 +555,5 @@
       "percent": 0.35
     }
   ],
-  "totalResolvedQueries": 5670
+  "totalResolvedQueries": 5710
 }
