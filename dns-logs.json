@@ -1,31 +1,19 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-22T18:21:00.614Z",
+  "generatedAt": "2026-09-22T20:02:24.567Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 5810
+    "other": 5670
   },
   "topBlocked": [],
   "topAllowed": [],
   "hourly": [
     {
-      "hour": "2026-09-21T18:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 100
-    },
-    {
-      "hour": "2026-09-21T19:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 130
-    },
-    {
       "hour": "2026-09-21T20:00:00Z",
       "allow": 0,
       "block": 0,
-      "other": 80
+      "other": 70
     },
     {
       "hour": "2026-09-21T21:00:00Z",
@@ -152,9 +140,57 @@
       "allow": 0,
       "block": 0,
       "other": 50
+    },
+    {
+      "hour": "2026-09-22T19:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 100
     }
   ],
   "recent": [
+    {
+      "domain": "api.weather.com",
+      "decision": 5,
+      "count": 30,
+      "hour": "2026-09-22T19:00:00Z"
+    },
+    {
+      "domain": "peoplestack-pa.googleapis.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-22T19:00:00Z"
+    },
+    {
+      "domain": "diagmon-serviceapi.samsungdm.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-22T19:00:00Z"
+    },
+    {
+      "domain": "connectivitycheck.gstatic.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-22T19:00:00Z"
+    },
+    {
+      "domain": "playstoregatewayadapter-pa.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-22T19:00:00Z"
+    },
+    {
+      "domain": "firebaseinstallations.googleapis.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-22T19:00:00Z"
+    },
+    {
+      "domain": "firebaseremoteconfigrealtime.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-22T19:00:00Z"
+    },
     {
       "domain": "down-zl-vn.img.susercontent.com",
       "decision": 5,
@@ -412,54 +448,12 @@
       "decision": 5,
       "count": 10,
       "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "connectivitycheck.gstatic.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "beacons5.gvt2.com",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "consent.samsungrs.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "spot-pa.googleapis.com",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-09-22T12:00:00Z"
-    },
-    {
-      "domain": "connectivitycheck.gstatic.com",
-      "decision": 5,
-      "count": 40,
-      "hour": "2026-09-22T11:00:00Z"
-    },
-    {
-      "domain": "4.1.168.192.in-addr.arpa",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-22T11:00:00Z"
-    },
-    {
-      "domain": "app-measurement.com",
-      "decision": 9,
-      "count": 30,
-      "hour": "2026-09-22T11:00:00Z"
     }
   ],
   "topRootDomains": [
     {
       "domain": "googleapis.com",
-      "count": 1560
+      "count": 1510
     },
     {
       "domain": "gvt2.com",
@@ -467,11 +461,11 @@
     },
     {
       "domain": "google.com",
-      "count": 650
+      "count": 640
     },
     {
       "domain": "gstatic.com",
-      "count": 380
+      "count": 370
     },
     {
       "domain": "googlevideo.com",
@@ -510,6 +504,10 @@
       "count": 80
     },
     {
+      "domain": "weather.com",
+      "count": 80
+    },
+    {
       "domain": "susercontent.com",
       "count": 80
     },
@@ -530,10 +528,6 @@
       "count": 50
     },
     {
-      "domain": "weather.com",
-      "count": 50
-    },
-    {
       "domain": "applovin.com",
       "count": 50
     }
@@ -541,19 +535,19 @@
   "gafamBreakdown": [
     {
       "owner": "Google",
-      "count": 2930,
-      "percent": 50.43
+      "count": 2860,
+      "percent": 50.44
     },
     {
       "owner": "Khác",
-      "count": 2850,
-      "percent": 49.05
+      "count": 2790,
+      "percent": 49.21
     },
     {
       "owner": "Meta",
-      "count": 30,
-      "percent": 0.52
+      "count": 20,
+      "percent": 0.35
     }
   ],
-  "totalResolvedQueries": 5810
+  "totalResolvedQueries": 5670
 }
