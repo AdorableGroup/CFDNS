@@ -1,25 +1,19 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-23T19:57:36.764Z",
+  "generatedAt": "2026-09-23T21:48:34.012Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 4630
+    "other": 4550
   },
   "topBlocked": [],
   "topAllowed": [],
   "hourly": [
     {
-      "hour": "2026-09-22T20:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 40
-    },
-    {
       "hour": "2026-09-22T21:00:00Z",
       "allow": 0,
       "block": 0,
-      "other": 100
+      "other": 10
     },
     {
       "hour": "2026-09-22T22:00:00Z",
@@ -140,9 +134,39 @@
       "allow": 0,
       "block": 0,
       "other": 40
+    },
+    {
+      "hour": "2026-09-23T20:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 20
+    },
+    {
+      "hour": "2026-09-23T21:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 30
     }
   ],
   "recent": [
+    {
+      "domain": "npn.netcoresmartech.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-23T21:00:00Z"
+    },
+    {
+      "domain": "userlocation.googleapis.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-23T21:00:00Z"
+    },
+    {
+      "domain": "ntp.ubuntu.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-23T20:00:00Z"
+    },
     {
       "domain": "play.googleapis.com",
       "decision": 5,
@@ -306,12 +330,6 @@
       "hour": "2026-09-23T14:00:00Z"
     },
     {
-      "domain": "rr2---sn-npoeenll.googlevideo.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-23T14:00:00Z"
-    },
-    {
       "domain": "firebaseinstallations.googleapis.com",
       "decision": 9,
       "count": 20,
@@ -331,6 +349,12 @@
     },
     {
       "domain": "play-lh.googleusercontent.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-23T14:00:00Z"
+    },
+    {
+      "domain": "rr2---sn-npoeenll.googlevideo.com",
       "decision": 5,
       "count": 20,
       "hour": "2026-09-23T14:00:00Z"
@@ -402,14 +426,14 @@
       "hour": "2026-09-23T13:00:00Z"
     },
     {
-      "domain": "static.ads-twitter.com",
-      "decision": 9,
+      "domain": "ogads-pa.clients6.google.com",
+      "decision": 5,
       "count": 40,
       "hour": "2026-09-23T13:00:00Z"
     },
     {
-      "domain": "ogads-pa.clients6.google.com",
-      "decision": 5,
+      "domain": "static.ads-twitter.com",
+      "decision": 9,
       "count": 40,
       "hour": "2026-09-23T13:00:00Z"
     },
@@ -420,26 +444,8 @@
       "hour": "2026-09-23T13:00:00Z"
     },
     {
-      "domain": "content-autofill.googleapis.com",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-23T13:00:00Z"
-    },
-    {
       "domain": "composer-cms.opera-api.com",
       "decision": 5,
-      "count": 30,
-      "hour": "2026-09-23T13:00:00Z"
-    },
-    {
-      "domain": "broker-uamo.vasdgame.com",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-23T13:00:00Z"
-    },
-    {
-      "domain": "spot-pa.googleapis.com",
-      "decision": 9,
       "count": 30,
       "hour": "2026-09-23T13:00:00Z"
     }
@@ -447,7 +453,7 @@
   "topRootDomains": [
     {
       "domain": "googleapis.com",
-      "count": 1250
+      "count": 1180
     },
     {
       "domain": "gvt2.com",
@@ -455,19 +461,19 @@
     },
     {
       "domain": "google.com",
-      "count": 280
+      "count": 270
     },
     {
       "domain": "googlevideo.com",
       "count": 190
     },
     {
-      "domain": "samsung.com",
-      "count": 170
-    },
-    {
       "domain": "gstatic.com",
       "count": 160
+    },
+    {
+      "domain": "samsung.com",
+      "count": 150
     },
     {
       "domain": "zaloapp.com",
@@ -490,6 +496,10 @@
       "count": 120
     },
     {
+      "domain": "ubuntu.com",
+      "count": 110
+    },
+    {
       "domain": "googleusercontent.com",
       "count": 100
     },
@@ -498,8 +508,8 @@
       "count": 90
     },
     {
-      "domain": "ubuntu.com",
-      "count": 90
+      "domain": "netcoresmartech.com",
+      "count": 80
     },
     {
       "domain": "gvt1.com",
@@ -520,28 +530,24 @@
     {
       "domain": "ytimg.com",
       "count": 70
-    },
-    {
-      "domain": "pubpowerplatform.io",
-      "count": 60
     }
   ],
   "gafamBreakdown": [
     {
       "owner": "Khác",
       "count": 2470,
-      "percent": 53.35
+      "percent": 54.29
     },
     {
       "owner": "Google",
-      "count": 2040,
-      "percent": 44.06
+      "count": 1960,
+      "percent": 43.08
     },
     {
       "owner": "Meta",
       "count": 120,
-      "percent": 2.59
+      "percent": 2.64
     }
   ],
-  "totalResolvedQueries": 4630
+  "totalResolvedQueries": 4550
 }
