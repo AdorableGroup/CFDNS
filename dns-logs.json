@@ -1,20 +1,14 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-24T19:12:38.927Z",
+  "generatedAt": "2026-09-24T20:15:47.959Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 6080
+    "other": 6050
   },
   "topBlocked": [],
   "topAllowed": [],
   "hourly": [
-    {
-      "hour": "2026-09-23T19:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 30
-    },
     {
       "hour": "2026-09-23T20:00:00Z",
       "allow": 0,
@@ -138,14 +132,14 @@
   ],
   "recent": [
     {
-      "domain": "proactivebackend-pa.googleapis.com",
-      "decision": 5,
+      "domain": "firebaseinstallations.googleapis.com",
+      "decision": 9,
       "count": 10,
       "hour": "2026-09-24T18:00:00Z"
     },
     {
-      "domain": "firebaseinstallations.googleapis.com",
-      "decision": 9,
+      "domain": "proactivebackend-pa.googleapis.com",
+      "decision": 5,
       "count": 10,
       "hour": "2026-09-24T18:00:00Z"
     },
@@ -441,7 +435,7 @@
   "topRootDomains": [
     {
       "domain": "googleapis.com",
-      "count": 1540
+      "count": 1510
     },
     {
       "domain": "gvt2.com",
@@ -524,17 +518,17 @@
     {
       "owner": "Khác",
       "count": 3050,
-      "percent": 50.16
+      "percent": 50.41
     },
     {
       "owner": "Google",
-      "count": 2890,
-      "percent": 47.53
+      "count": 2860,
+      "percent": 47.27
     },
     {
       "owner": "Meta",
       "count": 120,
-      "percent": 1.97
+      "percent": 1.98
     },
     {
       "owner": "Microsoft",
@@ -542,5 +536,5 @@
       "percent": 0.33
     }
   ],
-  "totalResolvedQueries": 6080
+  "totalResolvedQueries": 6050
 }
