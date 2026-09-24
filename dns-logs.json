@@ -1,26 +1,14 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-24T20:15:47.959Z",
+  "generatedAt": "2026-09-24T22:28:49.740Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 6050
+    "other": 6080
   },
   "topBlocked": [],
   "topAllowed": [],
   "hourly": [
-    {
-      "hour": "2026-09-23T20:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 20
-    },
-    {
-      "hour": "2026-09-23T21:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 40
-    },
     {
       "hour": "2026-09-23T23:00:00Z",
       "allow": 0,
@@ -128,9 +116,51 @@
       "allow": 0,
       "block": 0,
       "other": 20
+    },
+    {
+      "hour": "2026-09-24T21:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 80
+    },
+    {
+      "hour": "2026-09-24T22:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 10
     }
   ],
   "recent": [
+    {
+      "domain": "api.samsungcloud.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-24T22:00:00Z"
+    },
+    {
+      "domain": "api.account.samsung.com",
+      "decision": 5,
+      "count": 30,
+      "hour": "2026-09-24T21:00:00Z"
+    },
+    {
+      "domain": "locationhistoryaggregates-pa.googleapis.com",
+      "decision": 9,
+      "count": 30,
+      "hour": "2026-09-24T21:00:00Z"
+    },
+    {
+      "domain": "rt.applovin.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-24T21:00:00Z"
+    },
+    {
+      "domain": "d.applovin.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-24T21:00:00Z"
+    },
     {
       "domain": "firebaseinstallations.googleapis.com",
       "decision": 9,
@@ -400,42 +430,12 @@
       "decision": 9,
       "count": 10,
       "hour": "2026-09-24T14:00:00Z"
-    },
-    {
-      "domain": "www.google.com",
-      "decision": 7,
-      "count": 10,
-      "hour": "2026-09-24T14:00:00Z"
-    },
-    {
-      "domain": "59743e72-dnsotls-ds.metric.gstatic.com",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-09-24T14:00:00Z"
-    },
-    {
-      "domain": "www.google.com.vn",
-      "decision": 7,
-      "count": 10,
-      "hour": "2026-09-24T14:00:00Z"
-    },
-    {
-      "domain": "i.ytimg.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-24T14:00:00Z"
-    },
-    {
-      "domain": "nonexistent.cloudflare.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-24T14:00:00Z"
     }
   ],
   "topRootDomains": [
     {
       "domain": "googleapis.com",
-      "count": 1510
+      "count": 1520
     },
     {
       "domain": "gvt2.com",
@@ -466,6 +466,10 @@
       "count": 150
     },
     {
+      "domain": "samsung.com",
+      "count": 130
+    },
+    {
       "domain": "tplinkcloud.com",
       "count": 130
     },
@@ -480,10 +484,6 @@
     {
       "domain": "googleusercontent.com",
       "count": 110
-    },
-    {
-      "domain": "samsung.com",
-      "count": 100
     },
     {
       "domain": "doubleclick.net",
@@ -517,18 +517,18 @@
   "gafamBreakdown": [
     {
       "owner": "Khác",
-      "count": 3050,
-      "percent": 50.41
+      "count": 3070,
+      "percent": 50.49
     },
     {
       "owner": "Google",
-      "count": 2860,
-      "percent": 47.27
+      "count": 2870,
+      "percent": 47.2
     },
     {
       "owner": "Meta",
       "count": 120,
-      "percent": 1.98
+      "percent": 1.97
     },
     {
       "owner": "Microsoft",
@@ -536,5 +536,5 @@
       "percent": 0.33
     }
   ],
-  "totalResolvedQueries": 6050
+  "totalResolvedQueries": 6080
 }
