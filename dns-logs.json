@@ -1,31 +1,19 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-09-25T10:30:45.570Z",
+  "generatedAt": "2026-09-25T12:47:34.713Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 6710
+    "other": 6090
   },
   "topBlocked": [],
   "topAllowed": [],
   "hourly": [
     {
-      "hour": "2026-09-24T10:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 60
-    },
-    {
-      "hour": "2026-09-24T11:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 390
-    },
-    {
       "hour": "2026-09-24T12:00:00Z",
       "allow": 0,
       "block": 0,
-      "other": 1000
+      "other": 30
     },
     {
       "hour": "2026-09-24T13:00:00Z",
@@ -146,9 +134,273 @@
       "allow": 0,
       "block": 0,
       "other": 100
+    },
+    {
+      "hour": "2026-09-25T11:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 150
+    },
+    {
+      "hour": "2026-09-25T12:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 650
     }
   ],
   "recent": [
+    {
+      "domain": "af.opera.com",
+      "decision": 9,
+      "count": 80,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "firebaseinstallations.googleapis.com",
+      "decision": 9,
+      "count": 50,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "i.ytimg.com",
+      "decision": 5,
+      "count": 40,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "api.individual.githubcopilot.com",
+      "decision": 5,
+      "count": 40,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "terabox.com",
+      "decision": 5,
+      "count": 30,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "www.google.com",
+      "decision": 7,
+      "count": 30,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "grqklk9m9zs-e26b24.test.nextdns.io",
+      "decision": 5,
+      "count": 30,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "npn.netcoresmartech.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "sitecheck.opera.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "gateway.discord.gg",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "ns-global-dual.rtc.vietteltammi.vn",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "googleads.g.doubleclick.net",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "qbrere.launches.appsflyersdk.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "robinfrontend-pa.googleapis.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "www.quora.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "firebaseremoteconfigrealtime.googleapis.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "o33249.ingest.sentry.io",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "app-measurement.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "ipv6.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "alive.github.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "dash.cloudflare.com",
+      "decision": 10,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "cdn.discordapp.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "sync.opera.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "web.facebook.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "my.nextdns.io",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "clienttracing-pa.googleapis.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "vnbnbdzazx.cloudflare-gateway.com",
+      "decision": 10,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "photosdata-pa.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "s.youtube.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "github.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "dns.nextdns.io",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "developers.cloudflare.com",
+      "decision": 10,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "encrypted-tbn0.gstatic.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-09-25T12:00:00Z"
+    },
+    {
+      "domain": "a2tnxf.cdn-settings.appsflyersdk.com",
+      "decision": 9,
+      "count": 30,
+      "hour": "2026-09-25T11:00:00Z"
+    },
+    {
+      "domain": "nonexistent.cloudflare.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-25T11:00:00Z"
+    },
+    {
+      "domain": "firebaseinstallations.googleapis.com",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-09-25T11:00:00Z"
+    },
+    {
+      "domain": "vn.pool.ntp.org",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-25T11:00:00Z"
+    },
+    {
+      "domain": "android.apis.google.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-09-25T11:00:00Z"
+    },
+    {
+      "domain": "app-measurement.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-25T11:00:00Z"
+    },
+    {
+      "domain": "beacons.gcp.gvt2.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-25T11:00:00Z"
+    },
+    {
+      "domain": "spot-pa.googleapis.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-09-25T11:00:00Z"
+    },
+    {
+      "domain": "www.google.com",
+      "decision": 7,
+      "count": 10,
+      "hour": "2026-09-25T11:00:00Z"
+    },
     {
       "domain": "firebaseinstallations.googleapis.com",
       "decision": 9,
@@ -196,323 +448,63 @@
       "decision": 9,
       "count": 50,
       "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "gslb.sgw.shopeemobile.com",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "ubta.tracking.shopee.vn",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "down.anticheatexpert.com",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "sg-dr.intlgame.com",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "patronus.idata.shopeemobile.com",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "firebaseinstallations.googleapis.com",
-      "decision": 9,
-      "count": 30,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "app.adjust.net.in",
-      "decision": 9,
-      "count": 30,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "vgepodownload.mediatek.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "app-measurement.com",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "ntp.ubuntu.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "graph.facebook.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "play-tx-las.livetech.shopee.vn",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "prod-lt-playstoregatewayadapter-pa.googleapis.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "android.googleapis.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "uamo-image.arenabreakout.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "clients4.google.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "suggestqueries.google.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "cdn.ampproject.org",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "www.googleadservices.com",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "www.google.com",
-      "decision": 7,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "spot-pa.googleapis.com",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "publicfaas.vasdgame.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "gcloud.arenabreakout.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "gaplusme.mnacontrol.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T09:00:00Z"
-    },
-    {
-      "domain": "ns-global-dual.rtc.vietteltammi.vn",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "firebaseinstallations.googleapis.com",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "userlocation.googleapis.com",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "www.googleapis.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "rt.applovin.com",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "vn.pool.ntp.org",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "quake-pa.googleapis.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "android.apis.google.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "npn.netcoresmartech.com",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "play.googleapis.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "ntp.ubuntu.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-09-25T08:00:00Z"
-    },
-    {
-      "domain": "api.samsungcloud.com",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-09-25T07:00:00Z"
-    },
-    {
-      "domain": "googleads.g.doubleclick.net",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-25T07:00:00Z"
-    },
-    {
-      "domain": "web.facebook.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-25T07:00:00Z"
-    },
-    {
-      "domain": "ntp.ubuntu.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-25T07:00:00Z"
-    },
-    {
-      "domain": "rt.applovin.com",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-25T07:00:00Z"
-    },
-    {
-      "domain": "firebase-settings.crashlytics.com",
-      "decision": 9,
-      "count": 20,
-      "hour": "2026-09-25T07:00:00Z"
-    },
-    {
-      "domain": "rr2---sn-8qj-nbo66.gvt1.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-09-25T07:00:00Z"
     }
   ],
   "topRootDomains": [
     {
       "domain": "googleapis.com",
-      "count": 1760
+      "count": 1670
     },
     {
       "domain": "google.com",
-      "count": 520
-    },
-    {
-      "domain": "gstatic.com",
-      "count": 370
+      "count": 420
     },
     {
       "domain": "shopee.vn",
-      "count": 350
+      "count": 310
     },
     {
-      "domain": "gvt2.com",
-      "count": 250
+      "domain": "gstatic.com",
+      "count": 300
     },
     {
       "domain": "doubleclick.net",
       "count": 230
     },
     {
-      "domain": "app-measurement.com",
-      "count": 180
-    },
-    {
       "domain": "applovin.com",
       "count": 150
     },
     {
-      "domain": "youtube.com",
-      "count": 150
+      "domain": "opera.com",
+      "count": 140
     },
     {
       "domain": "samsung.com",
       "count": 120
     },
     {
-      "domain": "googlevideo.com",
+      "domain": "app-measurement.com",
       "count": 120
     },
     {
-      "domain": "facebook.com",
-      "count": 120
+      "domain": "youtube.com",
+      "count": 110
     },
     {
       "domain": "shopeemobile.com",
       "count": 110
     },
     {
+      "domain": "googlevideo.com",
+      "count": 110
+    },
+    {
+      "domain": "facebook.com",
+      "count": 110
+    },
+    {
       "domain": "unity3d.com",
-      "count": 100
-    },
-    {
-      "domain": "applvn.com",
-      "count": 100
-    },
-    {
-      "domain": "googleusercontent.com",
       "count": 100
     },
     {
@@ -524,30 +516,38 @@
       "count": 90
     },
     {
-      "domain": "susercontent.com",
+      "domain": "applvn.com",
+      "count": 90
+    },
+    {
+      "domain": "appsflyersdk.com",
       "count": 90
     },
     {
       "domain": "ubuntu.com",
       "count": 90
+    },
+    {
+      "domain": "vietteltammi.vn",
+      "count": 80
     }
   ],
   "gafamBreakdown": [
     {
       "owner": "Khác",
-      "count": 3350,
-      "percent": 49.93
+      "count": 3050,
+      "percent": 50.08
     },
     {
       "owner": "Google",
-      "count": 3150,
-      "percent": 46.94
+      "count": 2840,
+      "percent": 46.63
     },
     {
       "owner": "Meta",
-      "count": 210,
-      "percent": 3.13
+      "count": 200,
+      "percent": 3.28
     }
   ],
-  "totalResolvedQueries": 6710
+  "totalResolvedQueries": 6090
 }
