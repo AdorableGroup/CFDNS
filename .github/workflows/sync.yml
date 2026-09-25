@@ -1,4 +1,4 @@
-name: Đồng bộ DNS lên Cloudflare
+name: Đồng bộ DNS và Dọn dẹp Workflow
 
 on:
   schedule:
@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   pages: write
+  actions: write
   id-token: write
 
 jobs:
@@ -15,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
@@ -39,11 +40,6 @@ jobs:
         run: npm start
 
       - name: Lấy log DNS từ Cloudflare
-        # Cần token có thêm quyền "Account Analytics: Read". Nếu thiếu quyền
-        # hoặc lỗi tạm thời, không làm fail cả workflow — sync chính đã xong.
-        # Lưu ý: dns-logs cũng được chạy riêng mỗi 15 phút bởi
-        # .github/workflows/dns-logs.yml — bước này giữ lại để log luôn
-        # được làm mới ngay sau khi sync list/rule xong.
         continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -60,3 +56,58 @@ jobs:
           [ -f dns-logs.json ] && git add dns-logs.json
           git diff --staged --quiet || git commit -m "chore: cập nhật report.json và dns-logs.json [skip ci]"
           git push
+
+  cleanup:
+    needs: sync
+    if: always() # Chạy dọn dẹp kể cả khi sync thành công hay thất bại
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cleanup Caches (Keep 1 latest)
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN || github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          echo "=== BẮT ĐẦU DỌN DẸP CACHE ==="
+          CACHE_IDS=$(gh api repos/$REPO/actions/caches --paginate \
+            --jq '.actions_caches | sort_by(.created_at) | reverse | .[1:] | .[].id' 2>/dev/null || true)
+
+          if [ -z "$CACHE_IDS" ]; then
+            echo "Không có cache cũ nào cần xóa (Tổng số cache <= 1)."
+          else
+            for CACHE_ID in $CACHE_IDS; do
+              echo "Đang xóa cache ID: $CACHE_ID"
+              gh api --method DELETE repos/$REPO/actions/caches/$CACHE_ID
+            done
+            echo "Đã xóa xong các cache cũ!"
+          fi
+
+      - name: Cleanup Workflow Runs (Keep 1 latest successful run)
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN || github.token }}
+          REPO: ${{ github.repository }}
+          CURRENT_RUN_ID: ${{ github.run_id }}
+        run: |
+          echo "=== BẮT ĐẦU DỌN DẸP WORKFLOW RUNS ==="
+          LATEST_SUCCESS_ID=$(gh api "repos/$REPO/actions/runs?status=success&per_page=10" \
+            --jq ".workflow_runs[] | select(.id != $CURRENT_RUN_ID) | .id" | head -n 1 || true)
+
+          if [ -n "$LATEST_SUCCESS_ID" ]; then
+            echo "Tìm thấy Workflow Run thành công gần nhất cần giữ lại: ID $LATEST_SUCCESS_ID"
+          else
+            echo "Không tìm thấy run thành công nào trước đó để giữ lại."
+          fi
+
+          RUNS_TO_DELETE=$(gh api repos/$REPO/actions/runs --paginate \
+            --jq ".workflow_runs[] | select(.id != $CURRENT_RUN_ID and .id != ${LATEST_SUCCESS_ID:-0}) | .id")
+
+          if [ -z "$RUNS_TO_DELETE" ]; then
+            echo "Không có Workflow Runs cũ nào cần xóa."
+          else
+            echo "Đang tiến hành xóa các Workflow Runs cũ..."
+            for RUN_ID in $RUNS_TO_DELETE; do
+              echo "Đang xóa Workflow Run ID: $RUN_ID"
+              gh api --method DELETE repos/$REPO/actions/runs/$RUN_ID
+            done
+            echo "Dọn dẹp Workflow Runs hoàn tất!"
+          fi
+          
