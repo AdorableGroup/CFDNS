@@ -1,66 +1,5 @@
 [
   {
-    "timestamp": "2026-09-25T12:45:28.361Z",
-    "status": "success",
-    "command": "download",
-    "stats": {
-      "files": [
-        {
-          "filename": "allowlist.txt",
-          "sources": 12
-        },
-        {
-          "filename": "blocklist.txt",
-          "sources": 2
-        }
-      ],
-      "elapsedSeconds": "2.3"
-    }
-  },
-  {
-    "timestamp": "2026-09-25T12:47:31.883Z",
-    "status": "success",
-    "command": "sync-lists",
-    "stats": {
-      "domainCount": 258954,
-      "processed": 259799,
-      "invalid": 42,
-      "skipped": 845,
-      "limitReached": false,
-      "listsUpdated": 294,
-      "listsCreated": 0,
-      "added": 1118,
-      "removed": 5656,
-      "totalDomains": 258954
-    }
-  },
-  {
-    "timestamp": "2026-09-25T12:47:34.177Z",
-    "status": "success",
-    "command": "sync-rules",
-    "stats": {
-      "dnsRuleId": "de9a9dc3-f602-456f-9535-4a1ad1952715",
-      "sniEnabled": false,
-      "securityCategoryRuleId": "8ae5fedc-f76a-49c6-879b-0682cfae54f7"
-    }
-  },
-  {
-    "timestamp": "2026-09-25T12:47:34.714Z",
-    "status": "success",
-    "command": "dns-logs",
-    "stats": {
-      "windowHours": 24,
-      "totals": {
-        "allow": 0,
-        "block": 0,
-        "other": 6090
-      },
-      "topBlockedCount": 0,
-      "topAllowedCount": 0,
-      "recentRows": 50
-    }
-  },
-  {
     "timestamp": "2026-09-25T20:11:47.097Z",
     "status": "success",
     "command": "download",
@@ -908,6 +847,67 @@
         "allow": 0,
         "block": 0,
         "other": 6880
+      },
+      "topBlockedCount": 0,
+      "topAllowedCount": 0,
+      "recentRows": 50
+    }
+  },
+  {
+    "timestamp": "2026-10-09T21:24:37.105Z",
+    "status": "success",
+    "command": "download",
+    "stats": {
+      "files": [
+        {
+          "filename": "allowlist.txt",
+          "sources": 12
+        },
+        {
+          "filename": "blocklist.txt",
+          "sources": 2
+        }
+      ],
+      "elapsedSeconds": "2.3"
+    }
+  },
+  {
+    "timestamp": "2026-10-09T21:26:51.771Z",
+    "status": "success",
+    "command": "sync-lists",
+    "stats": {
+      "domainCount": 255608,
+      "processed": 256454,
+      "invalid": 43,
+      "skipped": 846,
+      "limitReached": false,
+      "listsUpdated": 268,
+      "listsCreated": 0,
+      "added": 1439,
+      "removed": 985,
+      "totalDomains": 255608
+    }
+  },
+  {
+    "timestamp": "2026-10-09T21:26:53.443Z",
+    "status": "success",
+    "command": "sync-rules",
+    "stats": {
+      "dnsRuleId": "de9a9dc3-f602-456f-9535-4a1ad1952715",
+      "sniEnabled": false,
+      "securityCategoryRuleId": "8ae5fedc-f76a-49c6-879b-0682cfae54f7"
+    }
+  },
+  {
+    "timestamp": "2026-10-09T21:26:54.159Z",
+    "status": "success",
+    "command": "dns-logs",
+    "stats": {
+      "windowHours": 24,
+      "totals": {
+        "allow": 0,
+        "block": 0,
+        "other": 12920
       },
       "topBlockedCount": 0,
       "topAllowedCount": 0,
