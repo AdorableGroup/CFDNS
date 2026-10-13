@@ -1,115 +1,19 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-10-12T23:26:37.439Z",
+  "generatedAt": "2026-10-13T21:42:25.434Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 4490
+    "other": 11760
   },
   "topBlocked": [],
   "topAllowed": [],
   "hourly": [
     {
-      "hour": "2026-10-11T23:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 30
-    },
-    {
-      "hour": "2026-10-12T01:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 700
-    },
-    {
-      "hour": "2026-10-12T02:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 910
-    },
-    {
-      "hour": "2026-10-12T03:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 240
-    },
-    {
-      "hour": "2026-10-12T04:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 320
-    },
-    {
-      "hour": "2026-10-12T05:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 340
-    },
-    {
-      "hour": "2026-10-12T06:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 170
-    },
-    {
-      "hour": "2026-10-12T07:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 190
-    },
-    {
-      "hour": "2026-10-12T11:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 50
-    },
-    {
-      "hour": "2026-10-12T13:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 130
-    },
-    {
-      "hour": "2026-10-12T14:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 310
-    },
-    {
-      "hour": "2026-10-12T15:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 140
-    },
-    {
-      "hour": "2026-10-12T16:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 210
-    },
-    {
-      "hour": "2026-10-12T17:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 110
-    },
-    {
-      "hour": "2026-10-12T18:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 40
-    },
-    {
-      "hour": "2026-10-12T19:00:00Z",
-      "allow": 0,
-      "block": 0,
-      "other": 30
-    },
-    {
       "hour": "2026-10-12T21:00:00Z",
       "allow": 0,
       "block": 0,
-      "other": 330
+      "other": 270
     },
     {
       "hour": "2026-10-12T22:00:00Z",
@@ -121,414 +25,546 @@
       "hour": "2026-10-12T23:00:00Z",
       "allow": 0,
       "block": 0,
+      "other": 250
+    },
+    {
+      "hour": "2026-10-13T00:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 50
+    },
+    {
+      "hour": "2026-10-13T01:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 740
+    },
+    {
+      "hour": "2026-10-13T02:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 540
+    },
+    {
+      "hour": "2026-10-13T03:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 1430
+    },
+    {
+      "hour": "2026-10-13T04:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 1210
+    },
+    {
+      "hour": "2026-10-13T05:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 410
+    },
+    {
+      "hour": "2026-10-13T06:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 240
+    },
+    {
+      "hour": "2026-10-13T07:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 470
+    },
+    {
+      "hour": "2026-10-13T08:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 60
+    },
+    {
+      "hour": "2026-10-13T09:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 1040
+    },
+    {
+      "hour": "2026-10-13T10:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 890
+    },
+    {
+      "hour": "2026-10-13T11:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 680
+    },
+    {
+      "hour": "2026-10-13T12:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 820
+    },
+    {
+      "hour": "2026-10-13T13:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 380
+    },
+    {
+      "hour": "2026-10-13T14:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 470
+    },
+    {
+      "hour": "2026-10-13T15:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 670
+    },
+    {
+      "hour": "2026-10-13T16:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 240
+    },
+    {
+      "hour": "2026-10-13T17:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 80
+    },
+    {
+      "hour": "2026-10-13T18:00:00Z",
+      "allow": 0,
+      "block": 0,
       "other": 150
+    },
+    {
+      "hour": "2026-10-13T19:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 80
+    },
+    {
+      "hour": "2026-10-13T20:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 80
+    },
+    {
+      "hour": "2026-10-13T21:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 420
     }
   ],
   "recent": [
     {
-      "domain": "a-api.anthropic.com",
+      "domain": "work.fife.usercontent.google.com",
+      "decision": 5,
+      "count": 60,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "play-zl-src.livestream.shopee.vn",
+      "decision": 5,
+      "count": 40,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "apm.tracking.shopee.vn",
+      "decision": 5,
+      "count": 40,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "android.googleapis.com",
       "decision": 5,
       "count": 30,
-      "hour": "2026-10-12T23:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "af.opera.com",
+      "domain": "vgepodownload.mediatek.com",
+      "decision": 10,
+      "count": 20,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "9zje6z.launches.appsflyersdk.com",
       "decision": 9,
       "count": 20,
-      "hour": "2026-10-12T23:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "www.google.com",
-      "decision": 7,
+      "domain": "analytics.google.com",
+      "decision": 9,
       "count": 20,
-      "hour": "2026-10-12T23:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "raw.githubusercontent.com",
+      "domain": "geller-pa.googleapis.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "gemini.google.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "vulcan3.branch.io",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T23:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "eu-auth2.samsungosp.com",
+      "domain": "stapecdn.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "api.fe.shopeepay.vn",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "api.account.samsung.com",
       "decision": 10,
       "count": 10,
-      "hour": "2026-10-12T23:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "googleads.g.doubleclick.net",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-10-12T23:00:00Z"
-    },
-    {
-      "domain": "signaler-pa.googleapis.com",
+      "domain": "us-east-1.hightouch-events.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T23:00:00Z"
-    },
-    {
-      "domain": "protectlog.vietteltelecom.vn",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T23:00:00Z"
-    },
-    {
-      "domain": "github.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T23:00:00Z"
-    },
-    {
-      "domain": "api.github.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T23:00:00Z"
-    },
-    {
-      "domain": "vas.samsungapps.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T23:00:00Z"
-    },
-    {
-      "domain": "protectlog.vietteltelecom.vn",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T22:00:00Z"
-    },
-    {
-      "domain": "spot-pa.googleapis.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T22:00:00Z"
-    },
-    {
-      "domain": "accounts.google.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T22:00:00Z"
-    },
-    {
-      "domain": "firebaseremoteconfigrealtime.googleapis.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T22:00:00Z"
-    },
-    {
-      "domain": "notifications-pa.googleapis.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T22:00:00Z"
-    },
-    {
-      "domain": "googleads.g.doubleclick.net",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-10-12T22:00:00Z"
-    },
-    {
-      "domain": "cdn.ampproject.org",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "play-tx-las.livetech.shopee.vn",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "live.shopee.vn",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "encrypted-vtbn2.gstatic.com",
-      "decision": 5,
-      "count": 30,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "play.googleapis.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "encrypted-tbn0.gstatic.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "prod-lt-playstoregatewayadapter-pa.googleapis.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "ns-global-dual.rtc.vietteltammi.vn",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "clients4.google.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "q0bvIG-dnsotls-ds.metric.gstatic.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "api.revenuecat.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "deo.shopeemobile.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "googleads.g.doubleclick.net",
-      "decision": 9,
-      "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
       "domain": "sync.opera.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "update.googleapis.com",
+      "domain": "api.revenuecat.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "mtalk.google.com",
-      "decision": 5,
+      "domain": "xml.opera.com",
+      "decision": 9,
       "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "optimizationguide-pa.googleapis.com",
+      "domain": "android.chat.openai.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "graph-fallback.facebook.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "scontent-sin2-3.xx.fbcdn.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
       "domain": "vn.pool.ntp.org",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "www.google.com",
-      "decision": 7,
-      "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
-    },
-    {
-      "domain": "vas.samsungapps.com",
+      "domain": "sdk.iad-04.braze.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T21:00:00Z"
+      "hour": "2026-10-13T21:00:00Z"
     },
     {
-      "domain": "ns-global-dual.rtc.vietteltammi.vn",
+      "domain": "i.ytimg.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "scontent.fsgn8-4.fna.fbcdn.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T21:00:00Z"
+    },
+    {
+      "domain": "spot-pa.googleapis.com",
       "decision": 5,
       "count": 20,
-      "hour": "2026-10-12T19:00:00Z"
+      "hour": "2026-10-13T20:00:00Z"
     },
     {
-      "domain": "firebaseremoteconfigrealtime.googleapis.com",
+      "domain": "sdkconfig.ad.intl.xiaomi.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-10-13T20:00:00Z"
+    },
+    {
+      "domain": "people-pa.googleapis.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T19:00:00Z"
+      "hour": "2026-10-13T20:00:00Z"
     },
     {
       "domain": "pa.netcoresmartech.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T18:00:00Z"
+      "hour": "2026-10-13T20:00:00Z"
     },
     {
-      "domain": "play.googleapis.com",
+      "domain": "geller-pa.googleapis.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T18:00:00Z"
+      "hour": "2026-10-13T20:00:00Z"
+    },
+    {
+      "domain": "ntp.ubuntu.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T20:00:00Z"
+    },
+    {
+      "domain": "firebaselogging.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T20:00:00Z"
+    },
+    {
+      "domain": "spot-pa.googleapis.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-10-13T19:00:00Z"
+    },
+    {
+      "domain": "geller-pa.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T19:00:00Z"
+    },
+    {
+      "domain": "ntp.ubuntu.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T19:00:00Z"
+    },
+    {
+      "domain": "pa.netcoresmartech.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T19:00:00Z"
+    },
+    {
+      "domain": "www.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T19:00:00Z"
     },
     {
       "domain": "vn.pool.ntp.org",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T18:00:00Z"
+      "hour": "2026-10-13T19:00:00Z"
     },
     {
-      "domain": "api.weather.com",
+      "domain": "i.ytimg.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T18:00:00Z"
+      "hour": "2026-10-13T19:00:00Z"
     },
     {
       "domain": "ntp.ubuntu.com",
       "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T17:00:00Z"
-    },
-    {
-      "domain": "ns-global-dual.rtc.vietteltammi.vn",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T17:00:00Z"
-    },
-    {
-      "domain": "api.weather.com",
-      "decision": 5,
-      "count": 20,
-      "hour": "2026-10-12T17:00:00Z"
-    },
-    {
-      "domain": "play.samsungcloud.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T17:00:00Z"
-    },
-    {
-      "domain": "play-fe.googleapis.com",
-      "decision": 5,
-      "count": 10,
-      "hour": "2026-10-12T17:00:00Z"
+      "count": 30,
+      "hour": "2026-10-13T18:00:00Z"
     },
     {
       "domain": "federatedcompute-pa.googleapis.com",
       "decision": 9,
-      "count": 10,
-      "hour": "2026-10-12T17:00:00Z"
+      "count": 30,
+      "hour": "2026-10-13T18:00:00Z"
     },
     {
-      "domain": "android.googleapis.com",
+      "domain": "spot-pa.googleapis.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-10-13T18:00:00Z"
+    },
+    {
+      "domain": "vn.pool.ntp.org",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-10-13T18:00:00Z"
+    },
+    {
+      "domain": "googleads.g.doubleclick.net",
+      "decision": 9,
+      "count": 20,
+      "hour": "2026-10-13T18:00:00Z"
+    },
+    {
+      "domain": "play.googleapis.com",
       "decision": 5,
       "count": 10,
-      "hour": "2026-10-12T17:00:00Z"
+      "hour": "2026-10-13T18:00:00Z"
+    },
+    {
+      "domain": "taskassist-pa.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T18:00:00Z"
+    },
+    {
+      "domain": "ns-global-dual.rtc.vietteltammi.vn",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T18:00:00Z"
+    },
+    {
+      "domain": "play.googleapis.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-10-13T17:00:00Z"
+    },
+    {
+      "domain": "spot-pa.googleapis.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T17:00:00Z"
+    },
+    {
+      "domain": "ntp.ubuntu.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T17:00:00Z"
+    },
+    {
+      "domain": "vn.pool.ntp.org",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-10-13T17:00:00Z"
     }
   ],
   "topRootDomains": [
     {
       "domain": "googleapis.com",
-      "count": 590
-    },
-    {
-      "domain": "shopee.vn",
-      "count": 520
-    },
-    {
-      "domain": "google.com",
-      "count": 410
-    },
-    {
-      "domain": "shopeemobile.com",
-      "count": 350
-    },
-    {
-      "domain": "gstatic.com",
-      "count": 300
-    },
-    {
-      "domain": "ubuntu.com",
-      "count": 170
-    },
-    {
-      "domain": "susercontent.com",
-      "count": 140
-    },
-    {
-      "domain": "ntp.org",
-      "count": 130
+      "count": 1680
     },
     {
       "domain": "opera.com",
-      "count": 130
+      "count": 860
     },
     {
-      "domain": "facebook.com",
-      "count": 110
+      "domain": "xiaomi.com",
+      "count": 740
     },
     {
-      "domain": "vietteltammi.vn",
-      "count": 110
+      "domain": "google.com",
+      "count": 660
     },
     {
-      "domain": "shopee.io",
-      "count": 100
+      "domain": "shopee.vn",
+      "count": 630
     },
     {
-      "domain": "netcoresmartech.com",
-      "count": 100
+      "domain": "gstatic.com",
+      "count": 470
     },
     {
-      "domain": "googlevideo.com",
-      "count": 100
-    },
-    {
-      "domain": "openai.com",
-      "count": 90
-    },
-    {
-      "domain": "weather.com",
-      "count": 90
-    },
-    {
-      "domain": "youtube.com",
-      "count": 80
+      "domain": "miui.com",
+      "count": 300
     },
     {
       "domain": "doubleclick.net",
-      "count": 80
+      "count": 300
     },
     {
-      "domain": "garena.com",
-      "count": 50
+      "domain": "opera.software",
+      "count": 280
+    },
+    {
+      "domain": "github.com",
+      "count": 270
+    },
+    {
+      "domain": "opera-api.com",
+      "count": 230
+    },
+    {
+      "domain": "googlevideo.com",
+      "count": 200
     },
     {
       "domain": "samsung.com",
-      "count": 50
+      "count": 190
+    },
+    {
+      "domain": "zadn.vn",
+      "count": 180
+    },
+    {
+      "domain": "ubuntu.com",
+      "count": 180
+    },
+    {
+      "domain": "ntp.org",
+      "count": 180
+    },
+    {
+      "domain": "gvt1.com",
+      "count": 160
+    },
+    {
+      "domain": "facebook.com",
+      "count": 160
+    },
+    {
+      "domain": "claude.ai",
+      "count": 130
+    },
+    {
+      "domain": "mediatek.com",
+      "count": 130
     }
   ],
   "gafamBreakdown": [
     {
       "owner": "Khác",
-      "count": 2790,
-      "percent": 62.14
+      "count": 8100,
+      "percent": 68.88
     },
     {
       "owner": "Google",
-      "count": 1560,
-      "percent": 34.74
+      "count": 3430,
+      "percent": 29.17
     },
     {
       "owner": "Meta",
-      "count": 130,
-      "percent": 2.9
+      "count": 200,
+      "percent": 1.7
     },
     {
       "owner": "Microsoft",
-      "count": 10,
-      "percent": 0.22
+      "count": 30,
+      "percent": 0.26
     }
   ],
-  "totalResolvedQueries": 4490
+  "totalResolvedQueries": 11760
 }
