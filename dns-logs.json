@@ -1,16 +1,375 @@
 {
   "windowHours": 24,
-  "generatedAt": "2026-11-12T22:33:27.754Z",
+  "generatedAt": "2026-11-14T09:48:17.528Z",
   "totals": {
     "allow": 0,
     "block": 0,
-    "other": 0
+    "other": 1810
   },
   "topBlocked": [],
   "topAllowed": [],
-  "hourly": [],
-  "recent": [],
-  "topRootDomains": [],
-  "gafamBreakdown": [],
-  "totalResolvedQueries": 0
+  "hourly": [
+    {
+      "hour": "2026-11-13T14:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 140
+    },
+    {
+      "hour": "2026-11-13T15:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 270
+    },
+    {
+      "hour": "2026-11-14T01:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 10
+    },
+    {
+      "hour": "2026-11-14T02:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 170
+    },
+    {
+      "hour": "2026-11-14T03:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 120
+    },
+    {
+      "hour": "2026-11-14T05:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 60
+    },
+    {
+      "hour": "2026-11-14T06:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 160
+    },
+    {
+      "hour": "2026-11-14T07:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 50
+    },
+    {
+      "hour": "2026-11-14T08:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 30
+    },
+    {
+      "hour": "2026-11-14T09:00:00Z",
+      "allow": 0,
+      "block": 0,
+      "other": 800
+    }
+  ],
+  "recent": [
+    {
+      "domain": "sync.opera.com",
+      "decision": 5,
+      "count": 60,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "af.opera.com",
+      "decision": 5,
+      "count": 40,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "i3d9o9ywsgjrgaheak1m9cra0rlgkp39s5qbp2g4-2.ipleak.net",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-62.ipleak.net",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "alive.github.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xw8aggpir8z6se12ayt507mhk0bmfli4z5j6hddc-7.ipleak.net",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "api.github.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "github.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-11.ipleak.net",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "www.google.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-33.ipleak.net",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "ogads-pa.clients6.google.com",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-1.ipleak.net",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "speedtest.vnso.vn",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "i3d9o9ywsgjrgaheak1m9cra0rlgkp39s5qbp2g4-22.ipleak.net",
+      "decision": 5,
+      "count": 20,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "geolocation.onetrust.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "push.opera-api.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-20.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-37.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "_8080._https.sg1.mobifone.vn.prod.hosts.ooklaserver.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "ipv6-c116-sin001-ix.1.oca.nflxvideo.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "o4cbuidhgjg9k4w50w4bpt3qiay1sck62ehz3u5j-17.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "ipv6-c024-del002-ix.1.oca.nflxvideo.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-76.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-49.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-39.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "i3d9o9ywsgjrgaheak1m9cra0rlgkp39s5qbp2g4-10.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-18.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "translation.opera-api.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "ipv6.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-13.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-47.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "locate.measurementlab.net",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "sitecheck.opera.com",
+      "decision": 9,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "o4cbuidhgjg9k4w50w4bpt3qiay1sck62ehz3u5j-14.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-70.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "www.gstatic.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "o4cbuidhgjg9k4w50w4bpt3qiay1sck62ehz3u5j-1.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "wivie.pages.dev",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-26.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-71.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-53.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "ipv4.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "xurf3yflj306pxi0o0r7bryl06wz0s0rl9lo0ppq-57.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "o4cbuidhgjg9k4w50w4bpt3qiay1sck62ehz3u5j-10.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "fast.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "o4cbuidhgjg9k4w50w4bpt3qiay1sck62ehz3u5j-5.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "gates.cloudflare.com",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "o4cbuidhgjg9k4w50w4bpt3qiay1sck62ehz3u5j-2.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    },
+    {
+      "domain": "i3d9o9ywsgjrgaheak1m9cra0rlgkp39s5qbp2g4-19.ipleak.net",
+      "decision": 5,
+      "count": 10,
+      "hour": "2026-11-14T09:00:00Z"
+    }
+  ]
 }
