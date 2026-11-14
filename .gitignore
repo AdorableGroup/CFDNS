@@ -1,0 +1,7 @@
+node_modules/
+.env
+allowlist.txt
+blocklist.txt
+whitelist.csv
+input.csv
+*.log

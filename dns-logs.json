@@ -1,0 +1,16 @@
+{
+  "windowHours": 24,
+  "generatedAt": "2026-11-12T22:33:27.754Z",
+  "totals": {
+    "allow": 0,
+    "block": 0,
+    "other": 0
+  },
+  "topBlocked": [],
+  "topAllowed": [],
+  "hourly": [],
+  "recent": [],
+  "topRootDomains": [],
+  "gafamBreakdown": [],
+  "totalResolvedQueries": 0
+}
